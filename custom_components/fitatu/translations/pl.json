@@ -1,0 +1,2270 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Połącz z Fitatu",
+        "description": "Zaloguj się adresem e-mail i hasłem Fitatu. Integracja łączy się bezpośrednio z Fitatu.",
+        "data": {
+          "email": "Adres e-mail",
+          "password": "Hasło"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Ponownie zaloguj się do Fitatu",
+        "description": "Wpisz ponownie adres e-mail i hasło Fitatu.",
+        "data": {
+          "email": "Adres e-mail",
+          "password": "Hasło"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Fitatu odrzuciło adres e-mail lub hasło.",
+      "cannot_connect": "Nie można połączyć się z Fitatu.",
+      "different_account": "Te dane logowania należą do innego konta Fitatu.",
+      "unknown": "Wystąpił nieoczekiwany błąd. Sprawdź dziennik Home Assistant."
+    },
+    "abort": {
+      "already_configured": "To konto Fitatu jest już skonfigurowane.",
+      "reauth_successful": "Ponownie zalogowano do Fitatu."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Kategorie monitorowania",
+        "description": "Wybierz grupy danych Fitatu udostępniane w Home Assistant.",
+        "data": {
+          "core": "Najważniejsze",
+          "nutrition": "Odżywianie",
+          "hydration": "Nawodnienie",
+          "activity": "Aktywność",
+          "body": "Pomiary ciała",
+          "advanced": "Zaawansowane"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "calories_eaten": {
+        "name": "Kalorie zjedzone dzisiaj"
+      },
+      "calories_target_min": {
+        "name": "Cel energetyczny (minimum)"
+      },
+      "calories_target_max": {
+        "name": "Cel energetyczny (maksimum)"
+      },
+      "calories_planned": {
+        "name": "Zaplanowana energia dzisiaj"
+      },
+      "protein_eaten": {
+        "name": "Białko zjedzone dzisiaj"
+      },
+      "protein_planned": {
+        "name": "Zaplanowane białko dzisiaj"
+      },
+      "protein_target_min": {
+        "name": "Cel białka (minimum)"
+      },
+      "protein_target_max": {
+        "name": "Cel białka (maksimum)"
+      },
+      "fat_eaten": {
+        "name": "Tłuszcz zjedzony dzisiaj"
+      },
+      "fat_planned": {
+        "name": "Zaplanowany tłuszcz dzisiaj"
+      },
+      "fat_target_min": {
+        "name": "Cel tłuszczu (minimum)"
+      },
+      "fat_target_max": {
+        "name": "Cel tłuszczu (maksimum)"
+      },
+      "carbohydrate_eaten": {
+        "name": "Węglowodany zjedzone dzisiaj"
+      },
+      "carbohydrate_planned": {
+        "name": "Zaplanowane węglowodany dzisiaj"
+      },
+      "carbohydrate_target_min": {
+        "name": "Cel węglowodanów (minimum)"
+      },
+      "carbohydrate_target_max": {
+        "name": "Cel węglowodanów (maksimum)"
+      },
+      "water": {
+        "name": "Wypita woda dzisiaj"
+      },
+      "water_target": {
+        "name": "Dzienny cel wody"
+      },
+      "activity_energy": {
+        "name": "Energia spalona podczas aktywności dzisiaj"
+      },
+      "activity_count": {
+        "name": "Aktywności dzisiaj"
+      },
+      "food_item_count": {
+        "name": "Wpisy posiłków dzisiaj"
+      },
+      "bmr": {
+        "name": "Podstawowa przemiana materii"
+      },
+      "tmr": {
+        "name": "Całkowita przemiana materii"
+      },
+      "weight": {
+        "name": "Ostatnia zapisana masa ciała"
+      }
+    }
+  },
+  "services": {
+    "delete_measurements": {
+      "description": "Usuwa wszystkie pomiary ciała z wybranego dnia.",
+      "name": "Usuń pomiary ciała",
+      "fields": {
+        "recipe_id": {
+          "name": "Identyfikator przepisu",
+          "description": "Identyfikator przepisu"
+        },
+        "minutes": {
+          "name": "Czas (min)",
+          "description": "Czas (min)"
+        },
+        "name": {
+          "name": "Nazwa",
+          "description": "Nazwa"
+        },
+        "calories": {
+          "name": "Kalorie (kcal)",
+          "description": "Kalorie (kcal)"
+        },
+        "waist": {
+          "name": "Talia (cm)",
+          "description": "Talia (cm)"
+        },
+        "protein_g": {
+          "name": "Białko (g)",
+          "description": "Białko (g)"
+        },
+        "fat_g": {
+          "name": "Tłuszcz (g)",
+          "description": "Tłuszcz (g)"
+        },
+        "activity_id": {
+          "name": "Identyfikator aktywności",
+          "description": "Identyfikator aktywności"
+        },
+        "to_meal": {
+          "name": "Posiłek docelowy",
+          "description": "Posiłek docelowy"
+        },
+        "to_date": {
+          "name": "Data docelowa",
+          "description": "Data docelowa"
+        },
+        "weight_unit": {
+          "name": "Jednostka masy",
+          "description": "Jednostka masy"
+        },
+        "unit": {
+          "name": "Jednostka",
+          "description": "Jednostka"
+        },
+        "quantity": {
+          "name": "Ilość",
+          "description": "Ilość"
+        },
+        "energy_kcal": {
+          "name": "Energia (kcal)",
+          "description": "Energia (kcal)"
+        },
+        "note": {
+          "name": "Notatka",
+          "description": "Notatka"
+        },
+        "product_id": {
+          "name": "Identyfikator produktu",
+          "description": "Identyfikator produktu"
+        },
+        "eaten": {
+          "name": "Oznacz jako zjedzone",
+          "description": "Oznacz jako zjedzone"
+        },
+        "arm": {
+          "name": "Ramię (cm)",
+          "description": "Ramię (cm)"
+        },
+        "date": {
+          "name": "Data źródłowa",
+          "description": "Data źródłowa"
+        },
+        "from_meal": {
+          "name": "Posiłek źródłowy",
+          "description": "Posiłek źródłowy"
+        },
+        "config_entry_id": {
+          "name": "Wpis integracji",
+          "description": "Wpis integracji"
+        },
+        "item_id": {
+          "name": "Identyfikator wpisu",
+          "description": "Identyfikator wpisu"
+        },
+        "amount": {
+          "name": "Wartość",
+          "description": "Wartość"
+        },
+        "meal": {
+          "name": "Posiłek",
+          "description": "Posiłek"
+        },
+        "weight": {
+          "name": "Masa ciała",
+          "description": "Masa ciała"
+        },
+        "millilitres": {
+          "name": "Mililitry",
+          "description": "Mililitry"
+        },
+        "chest": {
+          "name": "Klatka piersiowa (cm)",
+          "description": "Klatka piersiowa (cm)"
+        },
+        "hips": {
+          "name": "Biodra (cm)",
+          "description": "Biodra (cm)"
+        },
+        "fat_percentage": {
+          "name": "Tkanka tłuszczowa (%)",
+          "description": "Tkanka tłuszczowa (%)"
+        },
+        "carbs_g": {
+          "name": "Węglowodany (g)",
+          "description": "Węglowodany (g)"
+        },
+        "measure_id": {
+          "name": "Identyfikator miary",
+          "description": "Identyfikator miary"
+        },
+        "thigh": {
+          "name": "Udo (cm)",
+          "description": "Udo (cm)"
+        }
+      }
+    },
+    "set_measurements": {
+      "description": "Zapisuje podane pomiary dla wybranego dnia.",
+      "name": "Zapisz pomiary ciała",
+      "fields": {
+        "recipe_id": {
+          "name": "Identyfikator przepisu",
+          "description": "Identyfikator przepisu"
+        },
+        "minutes": {
+          "name": "Czas (min)",
+          "description": "Czas (min)"
+        },
+        "name": {
+          "name": "Nazwa",
+          "description": "Nazwa"
+        },
+        "calories": {
+          "name": "Kalorie (kcal)",
+          "description": "Kalorie (kcal)"
+        },
+        "waist": {
+          "name": "Talia (cm)",
+          "description": "Talia (cm)"
+        },
+        "protein_g": {
+          "name": "Białko (g)",
+          "description": "Białko (g)"
+        },
+        "fat_g": {
+          "name": "Tłuszcz (g)",
+          "description": "Tłuszcz (g)"
+        },
+        "activity_id": {
+          "name": "Identyfikator aktywności",
+          "description": "Identyfikator aktywności"
+        },
+        "to_meal": {
+          "name": "Posiłek docelowy",
+          "description": "Posiłek docelowy"
+        },
+        "to_date": {
+          "name": "Data docelowa",
+          "description": "Data docelowa"
+        },
+        "weight_unit": {
+          "name": "Jednostka masy",
+          "description": "Jednostka masy"
+        },
+        "unit": {
+          "name": "Jednostka",
+          "description": "Jednostka"
+        },
+        "quantity": {
+          "name": "Ilość",
+          "description": "Ilość"
+        },
+        "energy_kcal": {
+          "name": "Energia (kcal)",
+          "description": "Energia (kcal)"
+        },
+        "note": {
+          "name": "Notatka",
+          "description": "Notatka"
+        },
+        "product_id": {
+          "name": "Identyfikator produktu",
+          "description": "Identyfikator produktu"
+        },
+        "eaten": {
+          "name": "Oznacz jako zjedzone",
+          "description": "Oznacz jako zjedzone"
+        },
+        "arm": {
+          "name": "Ramię (cm)",
+          "description": "Ramię (cm)"
+        },
+        "date": {
+          "name": "Data źródłowa",
+          "description": "Data źródłowa"
+        },
+        "from_meal": {
+          "name": "Posiłek źródłowy",
+          "description": "Posiłek źródłowy"
+        },
+        "config_entry_id": {
+          "name": "Wpis integracji",
+          "description": "Wpis integracji"
+        },
+        "item_id": {
+          "name": "Identyfikator wpisu",
+          "description": "Identyfikator wpisu"
+        },
+        "amount": {
+          "name": "Wartość",
+          "description": "Wartość"
+        },
+        "meal": {
+          "name": "Posiłek",
+          "description": "Posiłek"
+        },
+        "weight": {
+          "name": "Masa ciała",
+          "description": "Masa ciała"
+        },
+        "millilitres": {
+          "name": "Mililitry",
+          "description": "Mililitry"
+        },
+        "chest": {
+          "name": "Klatka piersiowa (cm)",
+          "description": "Klatka piersiowa (cm)"
+        },
+        "hips": {
+          "name": "Biodra (cm)",
+          "description": "Biodra (cm)"
+        },
+        "fat_percentage": {
+          "name": "Tkanka tłuszczowa (%)",
+          "description": "Tkanka tłuszczowa (%)"
+        },
+        "carbs_g": {
+          "name": "Węglowodany (g)",
+          "description": "Węglowodany (g)"
+        },
+        "measure_id": {
+          "name": "Identyfikator miary",
+          "description": "Identyfikator miary"
+        },
+        "thigh": {
+          "name": "Udo (cm)",
+          "description": "Udo (cm)"
+        }
+      }
+    },
+    "update_item": {
+      "description": "Zmienia konkretny wpis na podstawie identyfikatora wiersza.",
+      "name": "Edytuj wpis posiłku",
+      "fields": {
+        "recipe_id": {
+          "name": "Identyfikator przepisu",
+          "description": "Identyfikator przepisu"
+        },
+        "minutes": {
+          "name": "Czas (min)",
+          "description": "Czas (min)"
+        },
+        "name": {
+          "name": "Nazwa",
+          "description": "Nazwa"
+        },
+        "calories": {
+          "name": "Kalorie (kcal)",
+          "description": "Kalorie (kcal)"
+        },
+        "waist": {
+          "name": "Talia (cm)",
+          "description": "Talia (cm)"
+        },
+        "protein_g": {
+          "name": "Białko (g)",
+          "description": "Białko (g)"
+        },
+        "fat_g": {
+          "name": "Tłuszcz (g)",
+          "description": "Tłuszcz (g)"
+        },
+        "activity_id": {
+          "name": "Identyfikator aktywności",
+          "description": "Identyfikator aktywności"
+        },
+        "to_meal": {
+          "name": "Posiłek docelowy",
+          "description": "Posiłek docelowy"
+        },
+        "to_date": {
+          "name": "Data docelowa",
+          "description": "Data docelowa"
+        },
+        "weight_unit": {
+          "name": "Jednostka masy",
+          "description": "Jednostka masy"
+        },
+        "unit": {
+          "name": "Jednostka",
+          "description": "Jednostka"
+        },
+        "quantity": {
+          "name": "Ilość",
+          "description": "Ilość"
+        },
+        "energy_kcal": {
+          "name": "Energia (kcal)",
+          "description": "Energia (kcal)"
+        },
+        "note": {
+          "name": "Notatka",
+          "description": "Notatka"
+        },
+        "product_id": {
+          "name": "Identyfikator produktu",
+          "description": "Identyfikator produktu"
+        },
+        "eaten": {
+          "name": "Oznacz jako zjedzone",
+          "description": "Oznacz jako zjedzone"
+        },
+        "arm": {
+          "name": "Ramię (cm)",
+          "description": "Ramię (cm)"
+        },
+        "date": {
+          "name": "Data źródłowa",
+          "description": "Data źródłowa"
+        },
+        "from_meal": {
+          "name": "Posiłek źródłowy",
+          "description": "Posiłek źródłowy"
+        },
+        "config_entry_id": {
+          "name": "Wpis integracji",
+          "description": "Wpis integracji"
+        },
+        "item_id": {
+          "name": "Identyfikator wpisu",
+          "description": "Identyfikator wpisu"
+        },
+        "amount": {
+          "name": "Wartość",
+          "description": "Wartość"
+        },
+        "meal": {
+          "name": "Posiłek",
+          "description": "Posiłek"
+        },
+        "weight": {
+          "name": "Masa ciała",
+          "description": "Masa ciała"
+        },
+        "millilitres": {
+          "name": "Mililitry",
+          "description": "Mililitry"
+        },
+        "chest": {
+          "name": "Klatka piersiowa (cm)",
+          "description": "Klatka piersiowa (cm)"
+        },
+        "hips": {
+          "name": "Biodra (cm)",
+          "description": "Biodra (cm)"
+        },
+        "fat_percentage": {
+          "name": "Tkanka tłuszczowa (%)",
+          "description": "Tkanka tłuszczowa (%)"
+        },
+        "carbs_g": {
+          "name": "Węglowodany (g)",
+          "description": "Węglowodany (g)"
+        },
+        "measure_id": {
+          "name": "Identyfikator miary",
+          "description": "Identyfikator miary"
+        },
+        "thigh": {
+          "name": "Udo (cm)",
+          "description": "Udo (cm)"
+        }
+      }
+    },
+    "remove_item": {
+      "description": "Usuwa konkretny wpis na podstawie identyfikatora wiersza.",
+      "name": "Usuń wpis posiłku",
+      "fields": {
+        "recipe_id": {
+          "name": "Identyfikator przepisu",
+          "description": "Identyfikator przepisu"
+        },
+        "minutes": {
+          "name": "Czas (min)",
+          "description": "Czas (min)"
+        },
+        "name": {
+          "name": "Nazwa",
+          "description": "Nazwa"
+        },
+        "calories": {
+          "name": "Kalorie (kcal)",
+          "description": "Kalorie (kcal)"
+        },
+        "waist": {
+          "name": "Talia (cm)",
+          "description": "Talia (cm)"
+        },
+        "protein_g": {
+          "name": "Białko (g)",
+          "description": "Białko (g)"
+        },
+        "fat_g": {
+          "name": "Tłuszcz (g)",
+          "description": "Tłuszcz (g)"
+        },
+        "activity_id": {
+          "name": "Identyfikator aktywności",
+          "description": "Identyfikator aktywności"
+        },
+        "to_meal": {
+          "name": "Posiłek docelowy",
+          "description": "Posiłek docelowy"
+        },
+        "to_date": {
+          "name": "Data docelowa",
+          "description": "Data docelowa"
+        },
+        "weight_unit": {
+          "name": "Jednostka masy",
+          "description": "Jednostka masy"
+        },
+        "unit": {
+          "name": "Jednostka",
+          "description": "Jednostka"
+        },
+        "quantity": {
+          "name": "Ilość",
+          "description": "Ilość"
+        },
+        "energy_kcal": {
+          "name": "Energia (kcal)",
+          "description": "Energia (kcal)"
+        },
+        "note": {
+          "name": "Notatka",
+          "description": "Notatka"
+        },
+        "product_id": {
+          "name": "Identyfikator produktu",
+          "description": "Identyfikator produktu"
+        },
+        "eaten": {
+          "name": "Oznacz jako zjedzone",
+          "description": "Oznacz jako zjedzone"
+        },
+        "arm": {
+          "name": "Ramię (cm)",
+          "description": "Ramię (cm)"
+        },
+        "date": {
+          "name": "Data źródłowa",
+          "description": "Data źródłowa"
+        },
+        "from_meal": {
+          "name": "Posiłek źródłowy",
+          "description": "Posiłek źródłowy"
+        },
+        "config_entry_id": {
+          "name": "Wpis integracji",
+          "description": "Wpis integracji"
+        },
+        "item_id": {
+          "name": "Identyfikator wpisu",
+          "description": "Identyfikator wpisu"
+        },
+        "amount": {
+          "name": "Wartość",
+          "description": "Wartość"
+        },
+        "meal": {
+          "name": "Posiłek",
+          "description": "Posiłek"
+        },
+        "weight": {
+          "name": "Masa ciała",
+          "description": "Masa ciała"
+        },
+        "millilitres": {
+          "name": "Mililitry",
+          "description": "Mililitry"
+        },
+        "chest": {
+          "name": "Klatka piersiowa (cm)",
+          "description": "Klatka piersiowa (cm)"
+        },
+        "hips": {
+          "name": "Biodra (cm)",
+          "description": "Biodra (cm)"
+        },
+        "fat_percentage": {
+          "name": "Tkanka tłuszczowa (%)",
+          "description": "Tkanka tłuszczowa (%)"
+        },
+        "carbs_g": {
+          "name": "Węglowodany (g)",
+          "description": "Węglowodany (g)"
+        },
+        "measure_id": {
+          "name": "Identyfikator miary",
+          "description": "Identyfikator miary"
+        },
+        "thigh": {
+          "name": "Udo (cm)",
+          "description": "Udo (cm)"
+        }
+      }
+    },
+    "add_activity": {
+      "description": "Zapisuje aktywność z katalogu Fitatu. Kalorie są przekazywane bez przeliczania.",
+      "name": "Dodaj aktywność",
+      "fields": {
+        "recipe_id": {
+          "name": "Identyfikator przepisu",
+          "description": "Identyfikator przepisu"
+        },
+        "minutes": {
+          "name": "Czas (min)",
+          "description": "Czas (min)"
+        },
+        "name": {
+          "name": "Nazwa",
+          "description": "Nazwa"
+        },
+        "calories": {
+          "name": "Kalorie (kcal)",
+          "description": "Kalorie (kcal)"
+        },
+        "waist": {
+          "name": "Talia (cm)",
+          "description": "Talia (cm)"
+        },
+        "protein_g": {
+          "name": "Białko (g)",
+          "description": "Białko (g)"
+        },
+        "fat_g": {
+          "name": "Tłuszcz (g)",
+          "description": "Tłuszcz (g)"
+        },
+        "activity_id": {
+          "name": "Identyfikator aktywności",
+          "description": "Identyfikator aktywności"
+        },
+        "to_meal": {
+          "name": "Posiłek docelowy",
+          "description": "Posiłek docelowy"
+        },
+        "to_date": {
+          "name": "Data docelowa",
+          "description": "Data docelowa"
+        },
+        "weight_unit": {
+          "name": "Jednostka masy",
+          "description": "Jednostka masy"
+        },
+        "unit": {
+          "name": "Jednostka",
+          "description": "Jednostka"
+        },
+        "quantity": {
+          "name": "Ilość",
+          "description": "Ilość"
+        },
+        "energy_kcal": {
+          "name": "Energia (kcal)",
+          "description": "Energia (kcal)"
+        },
+        "note": {
+          "name": "Notatka",
+          "description": "Notatka"
+        },
+        "product_id": {
+          "name": "Identyfikator produktu",
+          "description": "Identyfikator produktu"
+        },
+        "eaten": {
+          "name": "Oznacz jako zjedzone",
+          "description": "Oznacz jako zjedzone"
+        },
+        "arm": {
+          "name": "Ramię (cm)",
+          "description": "Ramię (cm)"
+        },
+        "date": {
+          "name": "Data źródłowa",
+          "description": "Data źródłowa"
+        },
+        "from_meal": {
+          "name": "Posiłek źródłowy",
+          "description": "Posiłek źródłowy"
+        },
+        "config_entry_id": {
+          "name": "Wpis integracji",
+          "description": "Wpis integracji"
+        },
+        "item_id": {
+          "name": "Identyfikator wpisu",
+          "description": "Identyfikator wpisu"
+        },
+        "amount": {
+          "name": "Wartość",
+          "description": "Wartość"
+        },
+        "meal": {
+          "name": "Posiłek",
+          "description": "Posiłek"
+        },
+        "weight": {
+          "name": "Masa ciała",
+          "description": "Masa ciała"
+        },
+        "millilitres": {
+          "name": "Mililitry",
+          "description": "Mililitry"
+        },
+        "chest": {
+          "name": "Klatka piersiowa (cm)",
+          "description": "Klatka piersiowa (cm)"
+        },
+        "hips": {
+          "name": "Biodra (cm)",
+          "description": "Biodra (cm)"
+        },
+        "fat_percentage": {
+          "name": "Tkanka tłuszczowa (%)",
+          "description": "Tkanka tłuszczowa (%)"
+        },
+        "carbs_g": {
+          "name": "Węglowodany (g)",
+          "description": "Węglowodany (g)"
+        },
+        "measure_id": {
+          "name": "Identyfikator miary",
+          "description": "Identyfikator miary"
+        },
+        "thigh": {
+          "name": "Udo (cm)",
+          "description": "Udo (cm)"
+        }
+      }
+    },
+    "add_custom_item": {
+      "description": "Dodaje własny wpis z kaloriami i makroskładnikami do posiłku.",
+      "name": "Dodaj własny produkt",
+      "fields": {
+        "recipe_id": {
+          "name": "Identyfikator przepisu",
+          "description": "Identyfikator przepisu"
+        },
+        "minutes": {
+          "name": "Czas (min)",
+          "description": "Czas (min)"
+        },
+        "name": {
+          "name": "Nazwa",
+          "description": "Nazwa"
+        },
+        "calories": {
+          "name": "Kalorie (kcal)",
+          "description": "Kalorie (kcal)"
+        },
+        "waist": {
+          "name": "Talia (cm)",
+          "description": "Talia (cm)"
+        },
+        "protein_g": {
+          "name": "Białko (g)",
+          "description": "Białko (g)"
+        },
+        "fat_g": {
+          "name": "Tłuszcz (g)",
+          "description": "Tłuszcz (g)"
+        },
+        "activity_id": {
+          "name": "Identyfikator aktywności",
+          "description": "Identyfikator aktywności"
+        },
+        "to_meal": {
+          "name": "Posiłek docelowy",
+          "description": "Posiłek docelowy"
+        },
+        "to_date": {
+          "name": "Data docelowa",
+          "description": "Data docelowa"
+        },
+        "weight_unit": {
+          "name": "Jednostka masy",
+          "description": "Jednostka masy"
+        },
+        "unit": {
+          "name": "Jednostka",
+          "description": "Jednostka"
+        },
+        "quantity": {
+          "name": "Ilość",
+          "description": "Ilość"
+        },
+        "energy_kcal": {
+          "name": "Energia (kcal)",
+          "description": "Energia (kcal)"
+        },
+        "note": {
+          "name": "Notatka",
+          "description": "Notatka"
+        },
+        "product_id": {
+          "name": "Identyfikator produktu",
+          "description": "Identyfikator produktu"
+        },
+        "eaten": {
+          "name": "Oznacz jako zjedzone",
+          "description": "Oznacz jako zjedzone"
+        },
+        "arm": {
+          "name": "Ramię (cm)",
+          "description": "Ramię (cm)"
+        },
+        "date": {
+          "name": "Data źródłowa",
+          "description": "Data źródłowa"
+        },
+        "from_meal": {
+          "name": "Posiłek źródłowy",
+          "description": "Posiłek źródłowy"
+        },
+        "config_entry_id": {
+          "name": "Wpis integracji",
+          "description": "Wpis integracji"
+        },
+        "item_id": {
+          "name": "Identyfikator wpisu",
+          "description": "Identyfikator wpisu"
+        },
+        "amount": {
+          "name": "Wartość",
+          "description": "Wartość"
+        },
+        "meal": {
+          "name": "Posiłek",
+          "description": "Posiłek"
+        },
+        "weight": {
+          "name": "Masa ciała",
+          "description": "Masa ciała"
+        },
+        "millilitres": {
+          "name": "Mililitry",
+          "description": "Mililitry"
+        },
+        "chest": {
+          "name": "Klatka piersiowa (cm)",
+          "description": "Klatka piersiowa (cm)"
+        },
+        "hips": {
+          "name": "Biodra (cm)",
+          "description": "Biodra (cm)"
+        },
+        "fat_percentage": {
+          "name": "Tkanka tłuszczowa (%)",
+          "description": "Tkanka tłuszczowa (%)"
+        },
+        "carbs_g": {
+          "name": "Węglowodany (g)",
+          "description": "Węglowodany (g)"
+        },
+        "measure_id": {
+          "name": "Identyfikator miary",
+          "description": "Identyfikator miary"
+        },
+        "thigh": {
+          "name": "Udo (cm)",
+          "description": "Udo (cm)"
+        }
+      }
+    },
+    "set_note": {
+      "description": "Zastępuje lub czyści notatkę wybranego dnia.",
+      "name": "Ustaw notatkę dnia",
+      "fields": {
+        "recipe_id": {
+          "name": "Identyfikator przepisu",
+          "description": "Identyfikator przepisu"
+        },
+        "minutes": {
+          "name": "Czas (min)",
+          "description": "Czas (min)"
+        },
+        "name": {
+          "name": "Nazwa",
+          "description": "Nazwa"
+        },
+        "calories": {
+          "name": "Kalorie (kcal)",
+          "description": "Kalorie (kcal)"
+        },
+        "waist": {
+          "name": "Talia (cm)",
+          "description": "Talia (cm)"
+        },
+        "protein_g": {
+          "name": "Białko (g)",
+          "description": "Białko (g)"
+        },
+        "fat_g": {
+          "name": "Tłuszcz (g)",
+          "description": "Tłuszcz (g)"
+        },
+        "activity_id": {
+          "name": "Identyfikator aktywności",
+          "description": "Identyfikator aktywności"
+        },
+        "to_meal": {
+          "name": "Posiłek docelowy",
+          "description": "Posiłek docelowy"
+        },
+        "to_date": {
+          "name": "Data docelowa",
+          "description": "Data docelowa"
+        },
+        "weight_unit": {
+          "name": "Jednostka masy",
+          "description": "Jednostka masy"
+        },
+        "unit": {
+          "name": "Jednostka",
+          "description": "Jednostka"
+        },
+        "quantity": {
+          "name": "Ilość",
+          "description": "Ilość"
+        },
+        "energy_kcal": {
+          "name": "Energia (kcal)",
+          "description": "Energia (kcal)"
+        },
+        "note": {
+          "name": "Notatka",
+          "description": "Notatka"
+        },
+        "product_id": {
+          "name": "Identyfikator produktu",
+          "description": "Identyfikator produktu"
+        },
+        "eaten": {
+          "name": "Oznacz jako zjedzone",
+          "description": "Oznacz jako zjedzone"
+        },
+        "arm": {
+          "name": "Ramię (cm)",
+          "description": "Ramię (cm)"
+        },
+        "date": {
+          "name": "Data źródłowa",
+          "description": "Data źródłowa"
+        },
+        "from_meal": {
+          "name": "Posiłek źródłowy",
+          "description": "Posiłek źródłowy"
+        },
+        "config_entry_id": {
+          "name": "Wpis integracji",
+          "description": "Wpis integracji"
+        },
+        "item_id": {
+          "name": "Identyfikator wpisu",
+          "description": "Identyfikator wpisu"
+        },
+        "amount": {
+          "name": "Wartość",
+          "description": "Wartość"
+        },
+        "meal": {
+          "name": "Posiłek",
+          "description": "Posiłek"
+        },
+        "weight": {
+          "name": "Masa ciała",
+          "description": "Masa ciała"
+        },
+        "millilitres": {
+          "name": "Mililitry",
+          "description": "Mililitry"
+        },
+        "chest": {
+          "name": "Klatka piersiowa (cm)",
+          "description": "Klatka piersiowa (cm)"
+        },
+        "hips": {
+          "name": "Biodra (cm)",
+          "description": "Biodra (cm)"
+        },
+        "fat_percentage": {
+          "name": "Tkanka tłuszczowa (%)",
+          "description": "Tkanka tłuszczowa (%)"
+        },
+        "carbs_g": {
+          "name": "Węglowodany (g)",
+          "description": "Węglowodany (g)"
+        },
+        "measure_id": {
+          "name": "Identyfikator miary",
+          "description": "Identyfikator miary"
+        },
+        "thigh": {
+          "name": "Udo (cm)",
+          "description": "Udo (cm)"
+        }
+      }
+    },
+    "set_water": {
+      "description": "Zastępuje łączną ilość wody zapisaną dla wybranego dnia.",
+      "name": "Ustaw łączną ilość wody",
+      "fields": {
+        "recipe_id": {
+          "name": "Identyfikator przepisu",
+          "description": "Identyfikator przepisu"
+        },
+        "minutes": {
+          "name": "Czas (min)",
+          "description": "Czas (min)"
+        },
+        "name": {
+          "name": "Nazwa",
+          "description": "Nazwa"
+        },
+        "calories": {
+          "name": "Kalorie (kcal)",
+          "description": "Kalorie (kcal)"
+        },
+        "waist": {
+          "name": "Talia (cm)",
+          "description": "Talia (cm)"
+        },
+        "protein_g": {
+          "name": "Białko (g)",
+          "description": "Białko (g)"
+        },
+        "fat_g": {
+          "name": "Tłuszcz (g)",
+          "description": "Tłuszcz (g)"
+        },
+        "activity_id": {
+          "name": "Identyfikator aktywności",
+          "description": "Identyfikator aktywności"
+        },
+        "to_meal": {
+          "name": "Posiłek docelowy",
+          "description": "Posiłek docelowy"
+        },
+        "to_date": {
+          "name": "Data docelowa",
+          "description": "Data docelowa"
+        },
+        "weight_unit": {
+          "name": "Jednostka masy",
+          "description": "Jednostka masy"
+        },
+        "unit": {
+          "name": "Jednostka",
+          "description": "Jednostka"
+        },
+        "quantity": {
+          "name": "Ilość",
+          "description": "Ilość"
+        },
+        "energy_kcal": {
+          "name": "Energia (kcal)",
+          "description": "Energia (kcal)"
+        },
+        "note": {
+          "name": "Notatka",
+          "description": "Notatka"
+        },
+        "product_id": {
+          "name": "Identyfikator produktu",
+          "description": "Identyfikator produktu"
+        },
+        "eaten": {
+          "name": "Oznacz jako zjedzone",
+          "description": "Oznacz jako zjedzone"
+        },
+        "arm": {
+          "name": "Ramię (cm)",
+          "description": "Ramię (cm)"
+        },
+        "date": {
+          "name": "Data źródłowa",
+          "description": "Data źródłowa"
+        },
+        "from_meal": {
+          "name": "Posiłek źródłowy",
+          "description": "Posiłek źródłowy"
+        },
+        "config_entry_id": {
+          "name": "Wpis integracji",
+          "description": "Wpis integracji"
+        },
+        "item_id": {
+          "name": "Identyfikator wpisu",
+          "description": "Identyfikator wpisu"
+        },
+        "amount": {
+          "name": "Wartość",
+          "description": "Wartość"
+        },
+        "meal": {
+          "name": "Posiłek",
+          "description": "Posiłek"
+        },
+        "weight": {
+          "name": "Masa ciała",
+          "description": "Masa ciała"
+        },
+        "millilitres": {
+          "name": "Mililitry",
+          "description": "Mililitry"
+        },
+        "chest": {
+          "name": "Klatka piersiowa (cm)",
+          "description": "Klatka piersiowa (cm)"
+        },
+        "hips": {
+          "name": "Biodra (cm)",
+          "description": "Biodra (cm)"
+        },
+        "fat_percentage": {
+          "name": "Tkanka tłuszczowa (%)",
+          "description": "Tkanka tłuszczowa (%)"
+        },
+        "carbs_g": {
+          "name": "Węglowodany (g)",
+          "description": "Węglowodany (g)"
+        },
+        "measure_id": {
+          "name": "Identyfikator miary",
+          "description": "Identyfikator miary"
+        },
+        "thigh": {
+          "name": "Udo (cm)",
+          "description": "Udo (cm)"
+        }
+      }
+    },
+    "remove_activity": {
+      "description": "Usuwa aktywność na podstawie identyfikatora wpisu.",
+      "name": "Usuń aktywność",
+      "fields": {
+        "recipe_id": {
+          "name": "Identyfikator przepisu",
+          "description": "Identyfikator przepisu"
+        },
+        "minutes": {
+          "name": "Czas (min)",
+          "description": "Czas (min)"
+        },
+        "name": {
+          "name": "Nazwa",
+          "description": "Nazwa"
+        },
+        "calories": {
+          "name": "Kalorie (kcal)",
+          "description": "Kalorie (kcal)"
+        },
+        "waist": {
+          "name": "Talia (cm)",
+          "description": "Talia (cm)"
+        },
+        "protein_g": {
+          "name": "Białko (g)",
+          "description": "Białko (g)"
+        },
+        "fat_g": {
+          "name": "Tłuszcz (g)",
+          "description": "Tłuszcz (g)"
+        },
+        "activity_id": {
+          "name": "Identyfikator aktywności",
+          "description": "Identyfikator aktywności"
+        },
+        "to_meal": {
+          "name": "Posiłek docelowy",
+          "description": "Posiłek docelowy"
+        },
+        "to_date": {
+          "name": "Data docelowa",
+          "description": "Data docelowa"
+        },
+        "weight_unit": {
+          "name": "Jednostka masy",
+          "description": "Jednostka masy"
+        },
+        "unit": {
+          "name": "Jednostka",
+          "description": "Jednostka"
+        },
+        "quantity": {
+          "name": "Ilość",
+          "description": "Ilość"
+        },
+        "energy_kcal": {
+          "name": "Energia (kcal)",
+          "description": "Energia (kcal)"
+        },
+        "note": {
+          "name": "Notatka",
+          "description": "Notatka"
+        },
+        "product_id": {
+          "name": "Identyfikator produktu",
+          "description": "Identyfikator produktu"
+        },
+        "eaten": {
+          "name": "Oznacz jako zjedzone",
+          "description": "Oznacz jako zjedzone"
+        },
+        "arm": {
+          "name": "Ramię (cm)",
+          "description": "Ramię (cm)"
+        },
+        "date": {
+          "name": "Data źródłowa",
+          "description": "Data źródłowa"
+        },
+        "from_meal": {
+          "name": "Posiłek źródłowy",
+          "description": "Posiłek źródłowy"
+        },
+        "config_entry_id": {
+          "name": "Wpis integracji",
+          "description": "Wpis integracji"
+        },
+        "item_id": {
+          "name": "Identyfikator wpisu",
+          "description": "Identyfikator wpisu"
+        },
+        "amount": {
+          "name": "Wartość",
+          "description": "Wartość"
+        },
+        "meal": {
+          "name": "Posiłek",
+          "description": "Posiłek"
+        },
+        "weight": {
+          "name": "Masa ciała",
+          "description": "Masa ciała"
+        },
+        "millilitres": {
+          "name": "Mililitry",
+          "description": "Mililitry"
+        },
+        "chest": {
+          "name": "Klatka piersiowa (cm)",
+          "description": "Klatka piersiowa (cm)"
+        },
+        "hips": {
+          "name": "Biodra (cm)",
+          "description": "Biodra (cm)"
+        },
+        "fat_percentage": {
+          "name": "Tkanka tłuszczowa (%)",
+          "description": "Tkanka tłuszczowa (%)"
+        },
+        "carbs_g": {
+          "name": "Węglowodany (g)",
+          "description": "Węglowodany (g)"
+        },
+        "measure_id": {
+          "name": "Identyfikator miary",
+          "description": "Identyfikator miary"
+        },
+        "thigh": {
+          "name": "Udo (cm)",
+          "description": "Udo (cm)"
+        }
+      }
+    },
+    "add_product": {
+      "description": "Dodaje produkt Fitatu na podstawie identyfikatora produktu i miary.",
+      "name": "Dodaj produkt z katalogu",
+      "fields": {
+        "recipe_id": {
+          "name": "Identyfikator przepisu",
+          "description": "Identyfikator przepisu"
+        },
+        "minutes": {
+          "name": "Czas (min)",
+          "description": "Czas (min)"
+        },
+        "name": {
+          "name": "Nazwa",
+          "description": "Nazwa"
+        },
+        "calories": {
+          "name": "Kalorie (kcal)",
+          "description": "Kalorie (kcal)"
+        },
+        "waist": {
+          "name": "Talia (cm)",
+          "description": "Talia (cm)"
+        },
+        "protein_g": {
+          "name": "Białko (g)",
+          "description": "Białko (g)"
+        },
+        "fat_g": {
+          "name": "Tłuszcz (g)",
+          "description": "Tłuszcz (g)"
+        },
+        "activity_id": {
+          "name": "Identyfikator aktywności",
+          "description": "Identyfikator aktywności"
+        },
+        "to_meal": {
+          "name": "Posiłek docelowy",
+          "description": "Posiłek docelowy"
+        },
+        "to_date": {
+          "name": "Data docelowa",
+          "description": "Data docelowa"
+        },
+        "weight_unit": {
+          "name": "Jednostka masy",
+          "description": "Jednostka masy"
+        },
+        "unit": {
+          "name": "Jednostka",
+          "description": "Jednostka"
+        },
+        "quantity": {
+          "name": "Ilość",
+          "description": "Ilość"
+        },
+        "energy_kcal": {
+          "name": "Energia (kcal)",
+          "description": "Energia (kcal)"
+        },
+        "note": {
+          "name": "Notatka",
+          "description": "Notatka"
+        },
+        "product_id": {
+          "name": "Identyfikator produktu",
+          "description": "Identyfikator produktu"
+        },
+        "eaten": {
+          "name": "Oznacz jako zjedzone",
+          "description": "Oznacz jako zjedzone"
+        },
+        "arm": {
+          "name": "Ramię (cm)",
+          "description": "Ramię (cm)"
+        },
+        "date": {
+          "name": "Data źródłowa",
+          "description": "Data źródłowa"
+        },
+        "from_meal": {
+          "name": "Posiłek źródłowy",
+          "description": "Posiłek źródłowy"
+        },
+        "config_entry_id": {
+          "name": "Wpis integracji",
+          "description": "Wpis integracji"
+        },
+        "item_id": {
+          "name": "Identyfikator wpisu",
+          "description": "Identyfikator wpisu"
+        },
+        "amount": {
+          "name": "Wartość",
+          "description": "Wartość"
+        },
+        "meal": {
+          "name": "Posiłek",
+          "description": "Posiłek"
+        },
+        "weight": {
+          "name": "Masa ciała",
+          "description": "Masa ciała"
+        },
+        "millilitres": {
+          "name": "Mililitry",
+          "description": "Mililitry"
+        },
+        "chest": {
+          "name": "Klatka piersiowa (cm)",
+          "description": "Klatka piersiowa (cm)"
+        },
+        "hips": {
+          "name": "Biodra (cm)",
+          "description": "Biodra (cm)"
+        },
+        "fat_percentage": {
+          "name": "Tkanka tłuszczowa (%)",
+          "description": "Tkanka tłuszczowa (%)"
+        },
+        "carbs_g": {
+          "name": "Węglowodany (g)",
+          "description": "Węglowodany (g)"
+        },
+        "measure_id": {
+          "name": "Identyfikator miary",
+          "description": "Identyfikator miary"
+        },
+        "thigh": {
+          "name": "Udo (cm)",
+          "description": "Udo (cm)"
+        }
+      }
+    },
+    "copy_meal": {
+      "name": "Skopiuj posiłek",
+      "description": "Kopiuje posiłek do innego posiłku lub dnia.",
+      "fields": {
+        "recipe_id": {
+          "name": "Identyfikator przepisu",
+          "description": "Identyfikator przepisu"
+        },
+        "minutes": {
+          "name": "Czas (min)",
+          "description": "Czas (min)"
+        },
+        "name": {
+          "name": "Nazwa",
+          "description": "Nazwa"
+        },
+        "calories": {
+          "name": "Kalorie (kcal)",
+          "description": "Kalorie (kcal)"
+        },
+        "waist": {
+          "name": "Talia (cm)",
+          "description": "Talia (cm)"
+        },
+        "protein_g": {
+          "name": "Białko (g)",
+          "description": "Białko (g)"
+        },
+        "fat_g": {
+          "name": "Tłuszcz (g)",
+          "description": "Tłuszcz (g)"
+        },
+        "activity_id": {
+          "name": "Identyfikator aktywności",
+          "description": "Identyfikator aktywności"
+        },
+        "to_meal": {
+          "name": "Posiłek docelowy",
+          "description": "Posiłek docelowy"
+        },
+        "to_date": {
+          "name": "Data docelowa",
+          "description": "Data docelowa"
+        },
+        "weight_unit": {
+          "name": "Jednostka masy",
+          "description": "Jednostka masy"
+        },
+        "unit": {
+          "name": "Jednostka",
+          "description": "Jednostka"
+        },
+        "quantity": {
+          "name": "Ilość",
+          "description": "Ilość"
+        },
+        "energy_kcal": {
+          "name": "Energia (kcal)",
+          "description": "Energia (kcal)"
+        },
+        "note": {
+          "name": "Notatka",
+          "description": "Notatka"
+        },
+        "product_id": {
+          "name": "Identyfikator produktu",
+          "description": "Identyfikator produktu"
+        },
+        "eaten": {
+          "name": "Oznacz jako zjedzone",
+          "description": "Oznacz jako zjedzone"
+        },
+        "arm": {
+          "name": "Ramię (cm)",
+          "description": "Ramię (cm)"
+        },
+        "date": {
+          "name": "Data źródłowa",
+          "description": "Data źródłowa"
+        },
+        "from_meal": {
+          "name": "Posiłek źródłowy",
+          "description": "Posiłek źródłowy"
+        },
+        "config_entry_id": {
+          "name": "Wpis integracji",
+          "description": "Wpis integracji"
+        },
+        "item_id": {
+          "name": "Identyfikator wpisu",
+          "description": "Identyfikator wpisu"
+        },
+        "amount": {
+          "name": "Wartość",
+          "description": "Wartość"
+        },
+        "meal": {
+          "name": "Posiłek",
+          "description": "Posiłek"
+        },
+        "weight": {
+          "name": "Masa ciała",
+          "description": "Masa ciała"
+        },
+        "millilitres": {
+          "name": "Mililitry",
+          "description": "Mililitry"
+        },
+        "chest": {
+          "name": "Klatka piersiowa (cm)",
+          "description": "Klatka piersiowa (cm)"
+        },
+        "hips": {
+          "name": "Biodra (cm)",
+          "description": "Biodra (cm)"
+        },
+        "fat_percentage": {
+          "name": "Tkanka tłuszczowa (%)",
+          "description": "Tkanka tłuszczowa (%)"
+        },
+        "carbs_g": {
+          "name": "Węglowodany (g)",
+          "description": "Węglowodany (g)"
+        },
+        "measure_id": {
+          "name": "Identyfikator miary",
+          "description": "Identyfikator miary"
+        },
+        "thigh": {
+          "name": "Udo (cm)",
+          "description": "Udo (cm)"
+        }
+      }
+    },
+    "add_recipe": {
+      "name": "Dodaj przepis",
+      "description": "Dodaje przepis do posiłku.",
+      "fields": {
+        "recipe_id": {
+          "name": "Identyfikator przepisu",
+          "description": "Identyfikator przepisu"
+        },
+        "minutes": {
+          "name": "Czas (min)",
+          "description": "Czas (min)"
+        },
+        "name": {
+          "name": "Nazwa",
+          "description": "Nazwa"
+        },
+        "calories": {
+          "name": "Kalorie (kcal)",
+          "description": "Kalorie (kcal)"
+        },
+        "waist": {
+          "name": "Talia (cm)",
+          "description": "Talia (cm)"
+        },
+        "protein_g": {
+          "name": "Białko (g)",
+          "description": "Białko (g)"
+        },
+        "fat_g": {
+          "name": "Tłuszcz (g)",
+          "description": "Tłuszcz (g)"
+        },
+        "activity_id": {
+          "name": "Identyfikator aktywności",
+          "description": "Identyfikator aktywności"
+        },
+        "to_meal": {
+          "name": "Posiłek docelowy",
+          "description": "Posiłek docelowy"
+        },
+        "to_date": {
+          "name": "Data docelowa",
+          "description": "Data docelowa"
+        },
+        "weight_unit": {
+          "name": "Jednostka masy",
+          "description": "Jednostka masy"
+        },
+        "unit": {
+          "name": "Jednostka",
+          "description": "Jednostka"
+        },
+        "quantity": {
+          "name": "Ilość",
+          "description": "Ilość"
+        },
+        "energy_kcal": {
+          "name": "Energia (kcal)",
+          "description": "Energia (kcal)"
+        },
+        "note": {
+          "name": "Notatka",
+          "description": "Notatka"
+        },
+        "product_id": {
+          "name": "Identyfikator produktu",
+          "description": "Identyfikator produktu"
+        },
+        "eaten": {
+          "name": "Oznacz jako zjedzone",
+          "description": "Oznacz jako zjedzone"
+        },
+        "arm": {
+          "name": "Ramię (cm)",
+          "description": "Ramię (cm)"
+        },
+        "date": {
+          "name": "Data źródłowa",
+          "description": "Data źródłowa"
+        },
+        "from_meal": {
+          "name": "Posiłek źródłowy",
+          "description": "Posiłek źródłowy"
+        },
+        "config_entry_id": {
+          "name": "Wpis integracji",
+          "description": "Wpis integracji"
+        },
+        "item_id": {
+          "name": "Identyfikator wpisu",
+          "description": "Identyfikator wpisu"
+        },
+        "amount": {
+          "name": "Wartość",
+          "description": "Wartość"
+        },
+        "meal": {
+          "name": "Posiłek",
+          "description": "Posiłek"
+        },
+        "weight": {
+          "name": "Masa ciała",
+          "description": "Masa ciała"
+        },
+        "millilitres": {
+          "name": "Mililitry",
+          "description": "Mililitry"
+        },
+        "chest": {
+          "name": "Klatka piersiowa (cm)",
+          "description": "Klatka piersiowa (cm)"
+        },
+        "hips": {
+          "name": "Biodra (cm)",
+          "description": "Biodra (cm)"
+        },
+        "fat_percentage": {
+          "name": "Tkanka tłuszczowa (%)",
+          "description": "Tkanka tłuszczowa (%)"
+        },
+        "carbs_g": {
+          "name": "Węglowodany (g)",
+          "description": "Węglowodany (g)"
+        },
+        "measure_id": {
+          "name": "Identyfikator miary",
+          "description": "Identyfikator miary"
+        },
+        "thigh": {
+          "name": "Udo (cm)",
+          "description": "Udo (cm)"
+        }
+      }
+    },
+    "add_product_unit": {
+      "name": "Dodaj produkt według ilości",
+      "description": "Dodaje produkt według ilości, np. gramów lub mililitrów.",
+      "fields": {
+        "recipe_id": {
+          "name": "Identyfikator przepisu",
+          "description": "Identyfikator przepisu"
+        },
+        "minutes": {
+          "name": "Czas (min)",
+          "description": "Czas (min)"
+        },
+        "name": {
+          "name": "Nazwa",
+          "description": "Nazwa"
+        },
+        "calories": {
+          "name": "Kalorie (kcal)",
+          "description": "Kalorie (kcal)"
+        },
+        "waist": {
+          "name": "Talia (cm)",
+          "description": "Talia (cm)"
+        },
+        "protein_g": {
+          "name": "Białko (g)",
+          "description": "Białko (g)"
+        },
+        "fat_g": {
+          "name": "Tłuszcz (g)",
+          "description": "Tłuszcz (g)"
+        },
+        "activity_id": {
+          "name": "Identyfikator aktywności",
+          "description": "Identyfikator aktywności"
+        },
+        "to_meal": {
+          "name": "Posiłek docelowy",
+          "description": "Posiłek docelowy"
+        },
+        "to_date": {
+          "name": "Data docelowa",
+          "description": "Data docelowa"
+        },
+        "weight_unit": {
+          "name": "Jednostka masy",
+          "description": "Jednostka masy"
+        },
+        "unit": {
+          "name": "Jednostka",
+          "description": "Jednostka"
+        },
+        "quantity": {
+          "name": "Ilość",
+          "description": "Ilość"
+        },
+        "energy_kcal": {
+          "name": "Energia (kcal)",
+          "description": "Energia (kcal)"
+        },
+        "note": {
+          "name": "Notatka",
+          "description": "Notatka"
+        },
+        "product_id": {
+          "name": "Identyfikator produktu",
+          "description": "Identyfikator produktu"
+        },
+        "eaten": {
+          "name": "Oznacz jako zjedzone",
+          "description": "Oznacz jako zjedzone"
+        },
+        "arm": {
+          "name": "Ramię (cm)",
+          "description": "Ramię (cm)"
+        },
+        "date": {
+          "name": "Data źródłowa",
+          "description": "Data źródłowa"
+        },
+        "from_meal": {
+          "name": "Posiłek źródłowy",
+          "description": "Posiłek źródłowy"
+        },
+        "config_entry_id": {
+          "name": "Wpis integracji",
+          "description": "Wpis integracji"
+        },
+        "item_id": {
+          "name": "Identyfikator wpisu",
+          "description": "Identyfikator wpisu"
+        },
+        "amount": {
+          "name": "Wartość",
+          "description": "Wartość"
+        },
+        "meal": {
+          "name": "Posiłek",
+          "description": "Posiłek"
+        },
+        "weight": {
+          "name": "Masa ciała",
+          "description": "Masa ciała"
+        },
+        "millilitres": {
+          "name": "Mililitry",
+          "description": "Mililitry"
+        },
+        "chest": {
+          "name": "Klatka piersiowa (cm)",
+          "description": "Klatka piersiowa (cm)"
+        },
+        "hips": {
+          "name": "Biodra (cm)",
+          "description": "Biodra (cm)"
+        },
+        "fat_percentage": {
+          "name": "Tkanka tłuszczowa (%)",
+          "description": "Tkanka tłuszczowa (%)"
+        },
+        "carbs_g": {
+          "name": "Węglowodany (g)",
+          "description": "Węglowodany (g)"
+        },
+        "measure_id": {
+          "name": "Identyfikator miary",
+          "description": "Identyfikator miary"
+        },
+        "thigh": {
+          "name": "Udo (cm)",
+          "description": "Udo (cm)"
+        }
+      }
+    },
+    "replace_item": {
+      "name": "Zamień wpis na własny produkt",
+      "description": "Zastępuje jeden wpis własnym produktem.",
+      "fields": {
+        "recipe_id": {
+          "name": "Identyfikator przepisu",
+          "description": "Identyfikator przepisu"
+        },
+        "minutes": {
+          "name": "Czas (min)",
+          "description": "Czas (min)"
+        },
+        "name": {
+          "name": "Nazwa",
+          "description": "Nazwa"
+        },
+        "calories": {
+          "name": "Kalorie (kcal)",
+          "description": "Kalorie (kcal)"
+        },
+        "waist": {
+          "name": "Talia (cm)",
+          "description": "Talia (cm)"
+        },
+        "protein_g": {
+          "name": "Białko (g)",
+          "description": "Białko (g)"
+        },
+        "fat_g": {
+          "name": "Tłuszcz (g)",
+          "description": "Tłuszcz (g)"
+        },
+        "activity_id": {
+          "name": "Identyfikator aktywności",
+          "description": "Identyfikator aktywności"
+        },
+        "to_meal": {
+          "name": "Posiłek docelowy",
+          "description": "Posiłek docelowy"
+        },
+        "to_date": {
+          "name": "Data docelowa",
+          "description": "Data docelowa"
+        },
+        "weight_unit": {
+          "name": "Jednostka masy",
+          "description": "Jednostka masy"
+        },
+        "unit": {
+          "name": "Jednostka",
+          "description": "Jednostka"
+        },
+        "quantity": {
+          "name": "Ilość",
+          "description": "Ilość"
+        },
+        "energy_kcal": {
+          "name": "Energia (kcal)",
+          "description": "Energia (kcal)"
+        },
+        "note": {
+          "name": "Notatka",
+          "description": "Notatka"
+        },
+        "product_id": {
+          "name": "Identyfikator produktu",
+          "description": "Identyfikator produktu"
+        },
+        "eaten": {
+          "name": "Oznacz jako zjedzone",
+          "description": "Oznacz jako zjedzone"
+        },
+        "arm": {
+          "name": "Ramię (cm)",
+          "description": "Ramię (cm)"
+        },
+        "date": {
+          "name": "Data źródłowa",
+          "description": "Data źródłowa"
+        },
+        "from_meal": {
+          "name": "Posiłek źródłowy",
+          "description": "Posiłek źródłowy"
+        },
+        "config_entry_id": {
+          "name": "Wpis integracji",
+          "description": "Wpis integracji"
+        },
+        "item_id": {
+          "name": "Identyfikator wpisu",
+          "description": "Identyfikator wpisu"
+        },
+        "amount": {
+          "name": "Wartość",
+          "description": "Wartość"
+        },
+        "meal": {
+          "name": "Posiłek",
+          "description": "Posiłek"
+        },
+        "weight": {
+          "name": "Masa ciała",
+          "description": "Masa ciała"
+        },
+        "millilitres": {
+          "name": "Mililitry",
+          "description": "Mililitry"
+        },
+        "chest": {
+          "name": "Klatka piersiowa (cm)",
+          "description": "Klatka piersiowa (cm)"
+        },
+        "hips": {
+          "name": "Biodra (cm)",
+          "description": "Biodra (cm)"
+        },
+        "fat_percentage": {
+          "name": "Tkanka tłuszczowa (%)",
+          "description": "Tkanka tłuszczowa (%)"
+        },
+        "carbs_g": {
+          "name": "Węglowodany (g)",
+          "description": "Węglowodany (g)"
+        },
+        "measure_id": {
+          "name": "Identyfikator miary",
+          "description": "Identyfikator miary"
+        },
+        "thigh": {
+          "name": "Udo (cm)",
+          "description": "Udo (cm)"
+        }
+      }
+    },
+    "move_item": {
+      "name": "Przenieś wpis",
+      "description": "Przenosi jeden wpis do innego posiłku lub dnia.",
+      "fields": {
+        "recipe_id": {
+          "name": "Identyfikator przepisu",
+          "description": "Identyfikator przepisu"
+        },
+        "minutes": {
+          "name": "Czas (min)",
+          "description": "Czas (min)"
+        },
+        "name": {
+          "name": "Nazwa",
+          "description": "Nazwa"
+        },
+        "calories": {
+          "name": "Kalorie (kcal)",
+          "description": "Kalorie (kcal)"
+        },
+        "waist": {
+          "name": "Talia (cm)",
+          "description": "Talia (cm)"
+        },
+        "protein_g": {
+          "name": "Białko (g)",
+          "description": "Białko (g)"
+        },
+        "fat_g": {
+          "name": "Tłuszcz (g)",
+          "description": "Tłuszcz (g)"
+        },
+        "activity_id": {
+          "name": "Identyfikator aktywności",
+          "description": "Identyfikator aktywności"
+        },
+        "to_meal": {
+          "name": "Posiłek docelowy",
+          "description": "Posiłek docelowy"
+        },
+        "to_date": {
+          "name": "Data docelowa",
+          "description": "Data docelowa"
+        },
+        "weight_unit": {
+          "name": "Jednostka masy",
+          "description": "Jednostka masy"
+        },
+        "unit": {
+          "name": "Jednostka",
+          "description": "Jednostka"
+        },
+        "quantity": {
+          "name": "Ilość",
+          "description": "Ilość"
+        },
+        "energy_kcal": {
+          "name": "Energia (kcal)",
+          "description": "Energia (kcal)"
+        },
+        "note": {
+          "name": "Notatka",
+          "description": "Notatka"
+        },
+        "product_id": {
+          "name": "Identyfikator produktu",
+          "description": "Identyfikator produktu"
+        },
+        "eaten": {
+          "name": "Oznacz jako zjedzone",
+          "description": "Oznacz jako zjedzone"
+        },
+        "arm": {
+          "name": "Ramię (cm)",
+          "description": "Ramię (cm)"
+        },
+        "date": {
+          "name": "Data źródłowa",
+          "description": "Data źródłowa"
+        },
+        "from_meal": {
+          "name": "Posiłek źródłowy",
+          "description": "Posiłek źródłowy"
+        },
+        "config_entry_id": {
+          "name": "Wpis integracji",
+          "description": "Wpis integracji"
+        },
+        "item_id": {
+          "name": "Identyfikator wpisu",
+          "description": "Identyfikator wpisu"
+        },
+        "amount": {
+          "name": "Wartość",
+          "description": "Wartość"
+        },
+        "meal": {
+          "name": "Posiłek",
+          "description": "Posiłek"
+        },
+        "weight": {
+          "name": "Masa ciała",
+          "description": "Masa ciała"
+        },
+        "millilitres": {
+          "name": "Mililitry",
+          "description": "Mililitry"
+        },
+        "chest": {
+          "name": "Klatka piersiowa (cm)",
+          "description": "Klatka piersiowa (cm)"
+        },
+        "hips": {
+          "name": "Biodra (cm)",
+          "description": "Biodra (cm)"
+        },
+        "fat_percentage": {
+          "name": "Tkanka tłuszczowa (%)",
+          "description": "Tkanka tłuszczowa (%)"
+        },
+        "carbs_g": {
+          "name": "Węglowodany (g)",
+          "description": "Węglowodany (g)"
+        },
+        "measure_id": {
+          "name": "Identyfikator miary",
+          "description": "Identyfikator miary"
+        },
+        "thigh": {
+          "name": "Udo (cm)",
+          "description": "Udo (cm)"
+        }
+      }
+    },
+    "set_water_glass_size": {
+      "name": "Ustaw pojemność szklanki",
+      "description": "Ustawia ilość mililitrów przypisaną jednej szklance w Fitatu.",
+      "fields": {
+        "recipe_id": {
+          "name": "Identyfikator przepisu",
+          "description": "Identyfikator przepisu"
+        },
+        "minutes": {
+          "name": "Czas (min)",
+          "description": "Czas (min)"
+        },
+        "name": {
+          "name": "Nazwa",
+          "description": "Nazwa"
+        },
+        "calories": {
+          "name": "Kalorie (kcal)",
+          "description": "Kalorie (kcal)"
+        },
+        "waist": {
+          "name": "Talia (cm)",
+          "description": "Talia (cm)"
+        },
+        "protein_g": {
+          "name": "Białko (g)",
+          "description": "Białko (g)"
+        },
+        "fat_g": {
+          "name": "Tłuszcz (g)",
+          "description": "Tłuszcz (g)"
+        },
+        "activity_id": {
+          "name": "Identyfikator aktywności",
+          "description": "Identyfikator aktywności"
+        },
+        "to_meal": {
+          "name": "Posiłek docelowy",
+          "description": "Posiłek docelowy"
+        },
+        "to_date": {
+          "name": "Data docelowa",
+          "description": "Data docelowa"
+        },
+        "weight_unit": {
+          "name": "Jednostka masy",
+          "description": "Jednostka masy"
+        },
+        "unit": {
+          "name": "Jednostka",
+          "description": "Jednostka"
+        },
+        "quantity": {
+          "name": "Ilość",
+          "description": "Ilość"
+        },
+        "energy_kcal": {
+          "name": "Energia (kcal)",
+          "description": "Energia (kcal)"
+        },
+        "note": {
+          "name": "Notatka",
+          "description": "Notatka"
+        },
+        "product_id": {
+          "name": "Identyfikator produktu",
+          "description": "Identyfikator produktu"
+        },
+        "eaten": {
+          "name": "Oznacz jako zjedzone",
+          "description": "Oznacz jako zjedzone"
+        },
+        "arm": {
+          "name": "Ramię (cm)",
+          "description": "Ramię (cm)"
+        },
+        "date": {
+          "name": "Data źródłowa",
+          "description": "Data źródłowa"
+        },
+        "from_meal": {
+          "name": "Posiłek źródłowy",
+          "description": "Posiłek źródłowy"
+        },
+        "config_entry_id": {
+          "name": "Wpis integracji",
+          "description": "Wpis integracji"
+        },
+        "item_id": {
+          "name": "Identyfikator wpisu",
+          "description": "Identyfikator wpisu"
+        },
+        "amount": {
+          "name": "Wartość",
+          "description": "Wartość"
+        },
+        "meal": {
+          "name": "Posiłek",
+          "description": "Posiłek"
+        },
+        "weight": {
+          "name": "Masa ciała",
+          "description": "Masa ciała"
+        },
+        "millilitres": {
+          "name": "Mililitry",
+          "description": "Mililitry"
+        },
+        "chest": {
+          "name": "Klatka piersiowa (cm)",
+          "description": "Klatka piersiowa (cm)"
+        },
+        "hips": {
+          "name": "Biodra (cm)",
+          "description": "Biodra (cm)"
+        },
+        "fat_percentage": {
+          "name": "Tkanka tłuszczowa (%)",
+          "description": "Tkanka tłuszczowa (%)"
+        },
+        "carbs_g": {
+          "name": "Węglowodany (g)",
+          "description": "Węglowodany (g)"
+        },
+        "measure_id": {
+          "name": "Identyfikator miary",
+          "description": "Identyfikator miary"
+        },
+        "thigh": {
+          "name": "Udo (cm)",
+          "description": "Udo (cm)"
+        }
+      }
+    }
+  }
+}

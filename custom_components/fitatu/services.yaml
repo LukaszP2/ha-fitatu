@@ -1,0 +1,270 @@
+add_custom_item:
+  fields:
+    config_entry_id:
+      required: true
+      selector: {config_entry: {integration: fitatu}}
+    meal:
+      required: true
+      selector:
+        select:
+          options: [breakfast, second_breakfast, lunch, dinner, snack, supper]
+    name:
+      required: true
+      selector: {text: {}}
+    calories:
+      required: true
+      selector: {number: {min: 0, max: 10000, step: 1, mode: box}}
+    protein_g:
+      selector: {number: {min: 0, max: 1000, step: 0.1, mode: box}}
+    fat_g:
+      selector: {number: {min: 0, max: 1000, step: 0.1, mode: box}}
+    carbs_g:
+      selector: {number: {min: 0, max: 1000, step: 0.1, mode: box}}
+    eaten:
+      selector: {boolean: {}}
+    date:
+      selector: {date: {}}
+add_product:
+  fields:
+    config_entry_id:
+      required: true
+      selector: {config_entry: {integration: fitatu}}
+    meal:
+      required: true
+      selector:
+        select:
+          options: [breakfast, second_breakfast, lunch, dinner, snack, supper]
+    product_id:
+      required: true
+      selector: {number: {min: 1, max: 1000000000, step: 1, mode: box}}
+    measure_id:
+      required: true
+      selector: {number: {min: 1, max: 1000000, step: 1, mode: box}}
+    quantity:
+      selector: {number: {min: 0.001, max: 10000, step: 0.1, mode: box}}
+    eaten:
+      selector: {boolean: {}}
+    date:
+      selector: {date: {}}
+add_product_unit:
+  fields:
+    config_entry_id:
+      required: true
+      selector: {config_entry: {integration: fitatu}}
+    meal:
+      required: true
+      selector: {select: {options: [breakfast, second_breakfast, lunch, dinner, snack, supper]}}
+    product_id:
+      required: true
+      selector: {number: {min: 1, max: 1000000000, step: 1, mode: box}}
+    amount:
+      required: true
+      selector: {number: {min: 0.001, max: 10000, step: 0.1, mode: box}}
+    unit:
+      required: true
+      selector: {text: {}}
+    eaten:
+      selector: {boolean: {}}
+    date:
+      selector: {date: {}}
+add_recipe:
+  fields:
+    config_entry_id:
+      required: true
+      selector: {config_entry: {integration: fitatu}}
+    meal:
+      required: true
+      selector: {select: {options: [breakfast, second_breakfast, lunch, dinner, snack, supper]}}
+    recipe_id:
+      required: true
+      selector: {number: {min: 1, max: 1000000000, step: 1, mode: box}}
+    quantity:
+      selector: {number: {min: 0.001, max: 10000, step: 0.1, mode: box}}
+    eaten:
+      selector: {boolean: {}}
+    date:
+      selector: {date: {}}
+update_item:
+  fields:
+    config_entry_id:
+      required: true
+      selector: {config_entry: {integration: fitatu}}
+    meal:
+      required: true
+      selector:
+        select:
+          options: [breakfast, second_breakfast, lunch, dinner, snack, supper]
+    item_id:
+      required: true
+      selector: {text: {}}
+    quantity:
+      selector: {number: {min: 0.001, max: 10000, step: 0.1, mode: box}}
+    measure_id:
+      selector: {number: {min: 1, max: 1000000, step: 1, mode: box}}
+    eaten:
+      selector: {boolean: {}}
+    name:
+      selector: {text: {}}
+    date:
+      selector: {date: {}}
+remove_item:
+  fields:
+    config_entry_id:
+      required: true
+      selector: {config_entry: {integration: fitatu}}
+    meal:
+      required: true
+      selector:
+        select:
+          options: [breakfast, second_breakfast, lunch, dinner, snack, supper]
+    item_id:
+      required: true
+      selector: {text: {}}
+    date:
+      selector: {date: {}}
+set_water:
+  fields:
+    config_entry_id:
+      required: true
+      selector: {config_entry: {integration: fitatu}}
+    millilitres:
+      required: true
+      selector: {number: {min: 0, max: 20000, step: 50, unit_of_measurement: ml, mode: box}}
+    date:
+      selector: {date: {}}
+set_measurements:
+  fields:
+    config_entry_id:
+      required: true
+      selector: {config_entry: {integration: fitatu}}
+    weight:
+      selector: {number: {min: 1, max: 700, step: 0.1, mode: box}}
+    weight_unit:
+      selector:
+        select:
+          options: [KG, LB]
+    fat_percentage:
+      selector: {number: {min: 0, max: 100, step: 0.1, mode: box}}
+    chest:
+      selector: {number: {min: 1, max: 300, step: 0.1, mode: box}}
+    waist:
+      selector: {number: {min: 1, max: 300, step: 0.1, mode: box}}
+    hips:
+      selector: {number: {min: 1, max: 300, step: 0.1, mode: box}}
+    thigh:
+      selector: {number: {min: 1, max: 200, step: 0.1, mode: box}}
+    arm:
+      selector: {number: {min: 1, max: 150, step: 0.1, mode: box}}
+    date:
+      selector: {date: {}}
+delete_measurements:
+  fields:
+    config_entry_id:
+      required: true
+      selector: {config_entry: {integration: fitatu}}
+    date:
+      required: true
+      selector: {date: {}}
+set_note:
+  fields:
+    config_entry_id:
+      required: true
+      selector: {config_entry: {integration: fitatu}}
+    note:
+      required: true
+      selector: {text: {multiline: true}}
+    date:
+      selector: {date: {}}
+add_activity:
+  fields:
+    config_entry_id:
+      required: true
+      selector: {config_entry: {integration: fitatu}}
+    activity_id:
+      required: true
+      selector: {number: {min: 1, max: 1000000000, step: 1, mode: box}}
+    minutes:
+      required: true
+      selector: {number: {min: 1, max: 1440, step: 1, unit_of_measurement: min, mode: box}}
+    energy_kcal:
+      required: true
+      selector: {number: {min: 0, max: 20000, step: 1, unit_of_measurement: kcal, mode: box}}
+    date:
+      selector: {date: {}}
+remove_activity:
+  fields:
+    config_entry_id:
+      required: true
+      selector: {config_entry: {integration: fitatu}}
+    activity_id:
+      required: true
+      selector: {text: {}}
+    date:
+      selector: {date: {}}
+move_item:
+  fields:
+    config_entry_id:
+      required: true
+      selector: {config_entry: {integration: fitatu}}
+    from_meal:
+      required: true
+      selector: {select: {options: [breakfast, second_breakfast, lunch, dinner, snack, supper]}}
+    item_id:
+      required: true
+      selector: {text: {}}
+    to_meal:
+      selector: {select: {options: [breakfast, second_breakfast, lunch, dinner, snack, supper]}}
+    to_date:
+      selector: {date: {}}
+    date:
+      selector: {date: {}}
+copy_meal:
+  fields:
+    config_entry_id:
+      required: true
+      selector: {config_entry: {integration: fitatu}}
+    from_meal:
+      required: true
+      selector: {select: {options: [breakfast, second_breakfast, lunch, dinner, snack, supper]}}
+    to_date:
+      required: true
+      selector: {date: {}}
+    to_meal:
+      selector: {select: {options: [breakfast, second_breakfast, lunch, dinner, snack, supper]}}
+    eaten:
+      selector: {boolean: {}}
+    date:
+      selector: {date: {}}
+replace_item:
+  fields:
+    config_entry_id:
+      required: true
+      selector: {config_entry: {integration: fitatu}}
+    meal:
+      required: true
+      selector: {select: {options: [breakfast, second_breakfast, lunch, dinner, snack, supper]}}
+    item_id:
+      required: true
+      selector: {text: {}}
+    name:
+      required: true
+      selector: {text: {}}
+    calories:
+      required: true
+      selector: {number: {min: 0, max: 10000, step: 1, mode: box}}
+    protein_g:
+      selector: {number: {min: 0, max: 1000, step: 0.1, mode: box}}
+    fat_g:
+      selector: {number: {min: 0, max: 1000, step: 0.1, mode: box}}
+    carbs_g:
+      selector: {number: {min: 0, max: 1000, step: 0.1, mode: box}}
+    date:
+      selector: {date: {}}
+set_water_glass_size:
+  fields:
+    config_entry_id:
+      required: true
+      selector: {config_entry: {integration: fitatu}}
+    millilitres:
+      required: true
+      selector: {number: {min: 1, max: 3000, step: 10, unit_of_measurement: ml, mode: box}}
