@@ -35,7 +35,7 @@ async def async_setup_actions(hass: HomeAssistant) -> None:
         if entry is None or entry.runtime_data is None:
             raise HomeAssistantError("Fitatu entry is not loaded")
         coordinator = entry.runtime_data
-        day = call.data.get("date") or coordinator._account_date()
+        day = call.data.get("date") or coordinator.account_date()
         user_id = entry.data[CONF_USER_ID]
         try:
             async with coordinator.api_lock:
@@ -273,6 +273,8 @@ async def async_setup_actions(hass: HomeAssistant) -> None:
 
     def coordinator_client(call: ServiceCall) -> Any:
         entry = async_get_config_entry(hass, DOMAIN, call.data["config_entry_id"])
+        if entry is None or entry.runtime_data is None:
+            raise HomeAssistantError("Fitatu entry is not loaded")
         return entry.runtime_data.client
 
     def entry_method(call: ServiceCall, kind: str) -> Callable[..., Any]:

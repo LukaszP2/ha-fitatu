@@ -47,8 +47,7 @@ SENSORS: tuple[FitatuSensorDescription, ...] = (
         data_key="energy_eaten",
         category=CATEGORY_CORE,
         native_unit_of_measurement=UnitOfEnergy.KILO_CALORIE,
-        device_class=SensorDeviceClass.ENERGY,
-        state_class=SensorStateClass.TOTAL,
+        state_class=SensorStateClass.MEASUREMENT,
     ),
     FitatuSensorDescription(
         key="calories_target_min",
@@ -56,7 +55,6 @@ SENSORS: tuple[FitatuSensorDescription, ...] = (
         data_key="energy_min",
         category=CATEGORY_CORE,
         native_unit_of_measurement=UnitOfEnergy.KILO_CALORIE,
-        device_class=SensorDeviceClass.ENERGY,
     ),
     FitatuSensorDescription(
         key="calories_target_max",
@@ -64,7 +62,6 @@ SENSORS: tuple[FitatuSensorDescription, ...] = (
         data_key="energy_max",
         category=CATEGORY_CORE,
         native_unit_of_measurement=UnitOfEnergy.KILO_CALORIE,
-        device_class=SensorDeviceClass.ENERGY,
     ),
     FitatuSensorDescription(
         key="calories_planned",
@@ -72,8 +69,7 @@ SENSORS: tuple[FitatuSensorDescription, ...] = (
         data_key="energy_current",
         category=CATEGORY_NUTRITION,
         native_unit_of_measurement=UnitOfEnergy.KILO_CALORIE,
-        device_class=SensorDeviceClass.ENERGY,
-        state_class=SensorStateClass.TOTAL,
+        state_class=SensorStateClass.MEASUREMENT,
     ),
     FitatuSensorDescription(
         key="protein_eaten",
@@ -81,7 +77,7 @@ SENSORS: tuple[FitatuSensorDescription, ...] = (
         data_key="protein_eaten",
         category=CATEGORY_NUTRITION,
         native_unit_of_measurement=UnitOfMass.GRAMS,
-        state_class=SensorStateClass.TOTAL,
+        state_class=SensorStateClass.MEASUREMENT,
     ),
     FitatuSensorDescription(
         key="protein_planned",
@@ -89,7 +85,7 @@ SENSORS: tuple[FitatuSensorDescription, ...] = (
         data_key="protein_current",
         category=CATEGORY_NUTRITION,
         native_unit_of_measurement=UnitOfMass.GRAMS,
-        state_class=SensorStateClass.TOTAL,
+        state_class=SensorStateClass.MEASUREMENT,
     ),
     FitatuSensorDescription(
         key="protein_target_min",
@@ -111,7 +107,7 @@ SENSORS: tuple[FitatuSensorDescription, ...] = (
         data_key="fat_eaten",
         category=CATEGORY_NUTRITION,
         native_unit_of_measurement=UnitOfMass.GRAMS,
-        state_class=SensorStateClass.TOTAL,
+        state_class=SensorStateClass.MEASUREMENT,
     ),
     FitatuSensorDescription(
         key="fat_planned",
@@ -119,7 +115,7 @@ SENSORS: tuple[FitatuSensorDescription, ...] = (
         data_key="fat_current",
         category=CATEGORY_NUTRITION,
         native_unit_of_measurement=UnitOfMass.GRAMS,
-        state_class=SensorStateClass.TOTAL,
+        state_class=SensorStateClass.MEASUREMENT,
     ),
     FitatuSensorDescription(
         key="fat_target_min",
@@ -141,7 +137,7 @@ SENSORS: tuple[FitatuSensorDescription, ...] = (
         data_key="carbohydrate_eaten",
         category=CATEGORY_NUTRITION,
         native_unit_of_measurement=UnitOfMass.GRAMS,
-        state_class=SensorStateClass.TOTAL,
+        state_class=SensorStateClass.MEASUREMENT,
     ),
     FitatuSensorDescription(
         key="carbohydrate_planned",
@@ -149,7 +145,7 @@ SENSORS: tuple[FitatuSensorDescription, ...] = (
         data_key="carbohydrate_current",
         category=CATEGORY_NUTRITION,
         native_unit_of_measurement=UnitOfMass.GRAMS,
-        state_class=SensorStateClass.TOTAL,
+        state_class=SensorStateClass.MEASUREMENT,
     ),
     FitatuSensorDescription(
         key="carbohydrate_target_min",
@@ -172,7 +168,7 @@ SENSORS: tuple[FitatuSensorDescription, ...] = (
         category=CATEGORY_HYDRATION,
         native_unit_of_measurement=UnitOfVolume.MILLILITERS,
         device_class=SensorDeviceClass.VOLUME,
-        state_class=SensorStateClass.TOTAL,
+        state_class=SensorStateClass.MEASUREMENT,
     ),
     FitatuSensorDescription(
         key="water_target",
@@ -188,8 +184,7 @@ SENSORS: tuple[FitatuSensorDescription, ...] = (
         data_key="activity_energy",
         category=CATEGORY_ACTIVITY,
         native_unit_of_measurement=UnitOfEnergy.KILO_CALORIE,
-        device_class=SensorDeviceClass.ENERGY,
-        state_class=SensorStateClass.TOTAL,
+        state_class=SensorStateClass.MEASUREMENT,
     ),
     FitatuSensorDescription(
         key="activity_count",
@@ -197,7 +192,7 @@ SENSORS: tuple[FitatuSensorDescription, ...] = (
         data_key="activity_count",
         category=CATEGORY_ACTIVITY,
         native_unit_of_measurement="activities",
-        state_class=SensorStateClass.TOTAL,
+        state_class=SensorStateClass.MEASUREMENT,
     ),
     FitatuSensorDescription(
         key="food_item_count",
@@ -205,7 +200,7 @@ SENSORS: tuple[FitatuSensorDescription, ...] = (
         data_key="food_item_count",
         category=CATEGORY_ADVANCED,
         native_unit_of_measurement="items",
-        state_class=SensorStateClass.TOTAL,
+        state_class=SensorStateClass.MEASUREMENT,
     ),
     FitatuSensorDescription(
         key="bmr",

@@ -20,7 +20,30 @@ Integracja Home Assistant z aplikacją Fitatu (licznik kalorii i dziennik diety)
 - Szczegółowe śledzenie makroskładników: białko, tłuszcze, węglowodany
 - Monitorowanie wagi ciała i postępów
 - Wybór monitorowanych kategorii w opcjach integracji (odżywianie, aktywność, pomiary ciała, nawodnienie)
-- Usługa `fitatu.add_custom_item` do szybkiego dodawania posiłków z poziomu automatyzacji i dashboardów
+- Zestaw usług do zarządzania dziennikiem diety, aktywnością, wodą i pomiarami
+
+### Dostępne usługi / akcje (Services)
+Integracja udostępnia zestaw usług dla administratorów Home Assistant:
+- **Posiłki i produkty:**
+  - `fitatu.add_custom_item` – dodaje własny posiłek z kaloriami i makroskładnikami
+  - `fitatu.add_product` – dodaje produkt z katalogu Fitatu (na podstawie `product_id` i `measure_id`)
+  - `fitatu.add_product_unit` – dodaje produkt z katalogu podając jednostkę i ilość
+  - `fitatu.add_recipe` – dodaje przepis z bazy Fitatu
+  - `fitatu.update_item` – edytuje istniejący wpis posiłku
+  - `fitatu.remove_item` – usuwa wpis posiłku
+  - `fitatu.move_item` – przenosi wpis do innego posiłku lub dnia
+  - `fitatu.copy_meal` – kopiuje cały posiłek do innego posiłku lub dnia
+  - `fitatu.replace_item` – zastępuje wpis posiłku wpisem własnym
+- **Woda i nawodnienie:**
+  - `fitatu.set_water` – ustawia dzienną ilość wypitej wody (w ml)
+  - `fitatu.set_water_glass_size` – konfiguruje domyślną pojemność szklanki wody
+- **Pomiary ciała i notatki:**
+  - `fitatu.set_measurements` – zapisuje pomiary ciała (waga, tkanka tłuszczowa, obwody)
+  - `fitatu.delete_measurements` – usuwa pomiary ciała z wybranego dnia
+  - `fitatu.set_note` – zapisuje lub czyści notatkę dzienną
+- **Aktywność fizyczna:**
+  - `fitatu.add_activity` – dodaje aktywność z katalogu (czas trwania i spalone kcal)
+  - `fitatu.remove_activity` – usuwa zarejestrowaną aktywność
 
 ### Instalacja przez HACS (Niestandardowe repozytorium)
 
@@ -54,6 +77,12 @@ Po zainstalowaniu i ponownym uruchomieniu Home Assistant, kliknij poniższy przy
 ## 🇬🇧 Description
 
 Home Assistant integration for Fitatu (calorie counter and diet diary). Tracks calories, macronutrients, body weight, and provides services to log food directly from Home Assistant.
+
+### Available Services
+- **Food & Meals:** `fitatu.add_custom_item`, `fitatu.add_product`, `fitatu.add_product_unit`, `fitatu.add_recipe`, `fitatu.update_item`, `fitatu.remove_item`, `fitatu.move_item`, `fitatu.copy_meal`, `fitatu.replace_item`
+- **Hydration:** `fitatu.set_water`, `fitatu.set_water_glass_size`
+- **Body Measurements & Notes:** `fitatu.set_measurements`, `fitatu.delete_measurements`, `fitatu.set_note`
+- **Activities:** `fitatu.add_activity`, `fitatu.remove_activity`
 
 ### Installation via HACS (Custom Repository)
 

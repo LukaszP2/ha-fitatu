@@ -8,9 +8,9 @@ from typing import Any
 import voluptuous as vol
 from fitatu_api import FitatuApiClient, FitatuApiError, FitatuAuthError
 from homeassistant import config_entries
+from homeassistant.config_entries import ConfigFlowResult
 from homeassistant.const import CONF_EMAIL, CONF_PASSWORD
 from homeassistant.core import HomeAssistant, callback
-from homeassistant.data_entry_flow import FlowResult
 
 from .const import CONF_SESSION, CONF_USER_ID, DOMAIN
 
@@ -42,7 +42,7 @@ class FitatuConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
 
     async def async_step_user(
         self, user_input: dict[str, Any] | None = None
-    ) -> FlowResult:
+    ) -> ConfigFlowResult:
         """Ask for Fitatu email and password."""
         errors: dict[str, str] = {}
         if user_input is not None:
@@ -51,12 +51,12 @@ class FitatuConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                     self.hass, user_input[CONF_EMAIL], user_input[CONF_PASSWORD]
                 )
             except FitatuAuthError:
-                errors["invalid_auth"] = "invalid_auth"
+                errors["base"] = "invalid_auth"
             except (FitatuApiError, OSError, TimeoutError):
-                errors["cannot_connect"] = "cannot_connect"
+                errors["base"] = "cannot_connect"
             except Exception:
                 _LOGGER.exception("Unexpected error while connecting to Fitatu")
-                errors["unknown"] = "unknown"
+                errors["base"] = "unknown"
             else:
                 await self.async_set_unique_id(user_id)
                 self._abort_if_unique_id_configured()
@@ -80,18 +80,17 @@ class FitatuConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
             errors=errors,
         )
 
-    async def async_step_reauth(self, entry_data: dict[str, Any]) -> FlowResult:
+    async def async_step_reauth(
+        self, entry_data: dict[str, Any]
+    ) -> ConfigFlowResult:
         """Start reauthentication for an existing account."""
-        self._reauth_entry = self.hass.config_entries.async_get_entry(
-            self.context["entry_id"]
-        )
         return await self.async_step_reauth_confirm()
 
     async def async_step_reauth_confirm(
         self, user_input: dict[str, Any] | None = None
-    ) -> FlowResult:
+    ) -> ConfigFlowResult:
         """Ask for credentials again and refresh the stored session."""
-        entry = self._reauth_entry
+        entry = self._get_reauth_entry()
         errors: dict[str, str] = {}
         if user_input is not None:
             try:
@@ -99,12 +98,12 @@ class FitatuConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                     self.hass, user_input[CONF_EMAIL], user_input[CONF_PASSWORD]
                 )
             except FitatuAuthError:
-                errors["invalid_auth"] = "invalid_auth"
+                errors["base"] = "invalid_auth"
             except (FitatuApiError, OSError, TimeoutError):
-                errors["cannot_connect"] = "cannot_connect"
+                errors["base"] = "cannot_connect"
             else:
                 if user_id != entry.data[CONF_USER_ID]:
-                    errors["different_account"] = "different_account"
+                    errors["base"] = "different_account"
                 else:
                     self.hass.config_entries.async_update_entry(
                         entry,
@@ -144,7 +143,7 @@ class FitatuOptionsFlow(config_entries.OptionsFlowWithReload):
 
     async def async_step_init(
         self, user_input: dict[str, Any] | None = None
-    ) -> FlowResult:
+    ) -> ConfigFlowResult:
         """Display category switches."""
         from .const import (
             CATEGORY_ACTIVITY,

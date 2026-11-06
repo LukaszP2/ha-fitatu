@@ -3,7 +3,6 @@
 from datetime import timedelta
 
 DOMAIN = "fitatu"
-CONF_EMAIL = "email"
 CONF_SESSION = "session"
 CONF_USER_ID = "user_id"
 

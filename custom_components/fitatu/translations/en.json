@@ -126,133 +126,13 @@
       "description": "Deletes all body measurements for the selected day.",
       "name": "Delete body measurements",
       "fields": {
-        "recipe_id": {
-          "name": "Recipe ID",
-          "description": "Recipe ID"
-        },
-        "minutes": {
-          "name": "Duration (minutes)",
-          "description": "Duration (minutes)"
-        },
-        "name": {
-          "name": "Name",
-          "description": "Name"
-        },
-        "calories": {
-          "name": "Calories (kcal)",
-          "description": "Calories (kcal)"
-        },
-        "waist": {
-          "name": "Waist (cm)",
-          "description": "Waist (cm)"
-        },
-        "protein_g": {
-          "name": "Protein (g)",
-          "description": "Protein (g)"
-        },
-        "fat_g": {
-          "name": "Fat (g)",
-          "description": "Fat (g)"
-        },
-        "activity_id": {
-          "name": "Activity row/catalog ID",
-          "description": "Activity row/catalog ID"
-        },
-        "to_meal": {
-          "name": "Destination meal",
-          "description": "Destination meal"
-        },
-        "to_date": {
-          "name": "Destination date",
-          "description": "Destination date"
-        },
-        "weight_unit": {
-          "name": "Weight unit",
-          "description": "Weight unit"
-        },
-        "unit": {
-          "name": "Unit",
-          "description": "Unit"
-        },
-        "quantity": {
-          "name": "Quantity",
-          "description": "Quantity"
-        },
-        "energy_kcal": {
-          "name": "Energy (kcal)",
-          "description": "Energy (kcal)"
-        },
-        "note": {
-          "name": "Note",
-          "description": "Note"
-        },
-        "product_id": {
-          "name": "Product ID",
-          "description": "Product ID"
-        },
-        "eaten": {
-          "name": "Mark as eaten",
-          "description": "Mark as eaten"
-        },
-        "arm": {
-          "name": "Arm (cm)",
-          "description": "Arm (cm)"
-        },
         "date": {
           "name": "Source date",
           "description": "Source date"
         },
-        "from_meal": {
-          "name": "Source meal",
-          "description": "Source meal"
-        },
         "config_entry_id": {
           "name": "Integration entry",
           "description": "Integration entry"
-        },
-        "item_id": {
-          "name": "Row ID",
-          "description": "Row ID"
-        },
-        "amount": {
-          "name": "Amount",
-          "description": "Amount"
-        },
-        "meal": {
-          "name": "Meal",
-          "description": "Meal"
-        },
-        "weight": {
-          "name": "Weight",
-          "description": "Weight"
-        },
-        "millilitres": {
-          "name": "Millilitres",
-          "description": "Millilitres"
-        },
-        "chest": {
-          "name": "Chest (cm)",
-          "description": "Chest (cm)"
-        },
-        "hips": {
-          "name": "Hips (cm)",
-          "description": "Hips (cm)"
-        },
-        "fat_percentage": {
-          "name": "Body fat (%)",
-          "description": "Body fat (%)"
-        },
-        "carbs_g": {
-          "name": "Carbohydrates (g)",
-          "description": "Carbohydrates (g)"
-        },
-        "measure_id": {
-          "name": "Measure ID",
-          "description": "Measure ID"
-        },
-        "thigh": {
-          "name": "Thigh (cm)",
-          "description": "Thigh (cm)"
         }
       }
     },
@@ -260,73 +140,13 @@
       "description": "Saves the supplied measurements for the day.",
       "name": "Save body measurements",
       "fields": {
-        "recipe_id": {
-          "name": "Recipe ID",
-          "description": "Recipe ID"
-        },
-        "minutes": {
-          "name": "Duration (minutes)",
-          "description": "Duration (minutes)"
-        },
-        "name": {
-          "name": "Name",
-          "description": "Name"
-        },
-        "calories": {
-          "name": "Calories (kcal)",
-          "description": "Calories (kcal)"
-        },
         "waist": {
           "name": "Waist (cm)",
           "description": "Waist (cm)"
         },
-        "protein_g": {
-          "name": "Protein (g)",
-          "description": "Protein (g)"
-        },
-        "fat_g": {
-          "name": "Fat (g)",
-          "description": "Fat (g)"
-        },
-        "activity_id": {
-          "name": "Activity row/catalog ID",
-          "description": "Activity row/catalog ID"
-        },
-        "to_meal": {
-          "name": "Destination meal",
-          "description": "Destination meal"
-        },
-        "to_date": {
-          "name": "Destination date",
-          "description": "Destination date"
-        },
         "weight_unit": {
           "name": "Weight unit",
           "description": "Weight unit"
-        },
-        "unit": {
-          "name": "Unit",
-          "description": "Unit"
-        },
-        "quantity": {
-          "name": "Quantity",
-          "description": "Quantity"
-        },
-        "energy_kcal": {
-          "name": "Energy (kcal)",
-          "description": "Energy (kcal)"
-        },
-        "note": {
-          "name": "Note",
-          "description": "Note"
-        },
-        "product_id": {
-          "name": "Product ID",
-          "description": "Product ID"
-        },
-        "eaten": {
-          "name": "Mark as eaten",
-          "description": "Mark as eaten"
         },
         "arm": {
           "name": "Arm (cm)",
@@ -336,33 +156,13 @@
           "name": "Source date",
           "description": "Source date"
         },
-        "from_meal": {
-          "name": "Source meal",
-          "description": "Source meal"
-        },
         "config_entry_id": {
           "name": "Integration entry",
           "description": "Integration entry"
         },
-        "item_id": {
-          "name": "Row ID",
-          "description": "Row ID"
-        },
-        "amount": {
-          "name": "Amount",
-          "description": "Amount"
-        },
-        "meal": {
-          "name": "Meal",
-          "description": "Meal"
-        },
         "weight": {
           "name": "Weight",
           "description": "Weight"
-        },
-        "millilitres": {
-          "name": "Millilitres",
-          "description": "Millilitres"
         },
         "chest": {
           "name": "Chest (cm)",
@@ -375,14 +175,6 @@
         "fat_percentage": {
           "name": "Body fat (%)",
           "description": "Body fat (%)"
-        },
-        "carbs_g": {
-          "name": "Carbohydrates (g)",
-          "description": "Carbohydrates (g)"
-        },
-        "measure_id": {
-          "name": "Measure ID",
-          "description": "Measure ID"
         },
         "thigh": {
           "name": "Thigh (cm)",
@@ -394,85 +186,21 @@
       "description": "Changes a specific food entry using its row ID.",
       "name": "Update food entry",
       "fields": {
-        "recipe_id": {
-          "name": "Recipe ID",
-          "description": "Recipe ID"
-        },
-        "minutes": {
-          "name": "Duration (minutes)",
-          "description": "Duration (minutes)"
-        },
         "name": {
           "name": "Name",
           "description": "Name"
-        },
-        "calories": {
-          "name": "Calories (kcal)",
-          "description": "Calories (kcal)"
-        },
-        "waist": {
-          "name": "Waist (cm)",
-          "description": "Waist (cm)"
-        },
-        "protein_g": {
-          "name": "Protein (g)",
-          "description": "Protein (g)"
-        },
-        "fat_g": {
-          "name": "Fat (g)",
-          "description": "Fat (g)"
-        },
-        "activity_id": {
-          "name": "Activity row/catalog ID",
-          "description": "Activity row/catalog ID"
-        },
-        "to_meal": {
-          "name": "Destination meal",
-          "description": "Destination meal"
-        },
-        "to_date": {
-          "name": "Destination date",
-          "description": "Destination date"
-        },
-        "weight_unit": {
-          "name": "Weight unit",
-          "description": "Weight unit"
-        },
-        "unit": {
-          "name": "Unit",
-          "description": "Unit"
         },
         "quantity": {
           "name": "Quantity",
           "description": "Quantity"
         },
-        "energy_kcal": {
-          "name": "Energy (kcal)",
-          "description": "Energy (kcal)"
-        },
-        "note": {
-          "name": "Note",
-          "description": "Note"
-        },
-        "product_id": {
-          "name": "Product ID",
-          "description": "Product ID"
-        },
         "eaten": {
           "name": "Mark as eaten",
           "description": "Mark as eaten"
         },
-        "arm": {
-          "name": "Arm (cm)",
-          "description": "Arm (cm)"
-        },
         "date": {
           "name": "Source date",
           "description": "Source date"
-        },
-        "from_meal": {
-          "name": "Source meal",
-          "description": "Source meal"
         },
         "config_entry_id": {
           "name": "Integration entry",
@@ -482,45 +210,13 @@
           "name": "Row ID",
           "description": "Row ID"
         },
-        "amount": {
-          "name": "Amount",
-          "description": "Amount"
-        },
         "meal": {
           "name": "Meal",
           "description": "Meal"
         },
-        "weight": {
-          "name": "Weight",
-          "description": "Weight"
-        },
-        "millilitres": {
-          "name": "Millilitres",
-          "description": "Millilitres"
-        },
-        "chest": {
-          "name": "Chest (cm)",
-          "description": "Chest (cm)"
-        },
-        "hips": {
-          "name": "Hips (cm)",
-          "description": "Hips (cm)"
-        },
-        "fat_percentage": {
-          "name": "Body fat (%)",
-          "description": "Body fat (%)"
-        },
-        "carbs_g": {
-          "name": "Carbohydrates (g)",
-          "description": "Carbohydrates (g)"
-        },
         "measure_id": {
           "name": "Measure ID",
           "description": "Measure ID"
-        },
-        "thigh": {
-          "name": "Thigh (cm)",
-          "description": "Thigh (cm)"
         }
       }
     },
@@ -528,85 +224,9 @@
       "description": "Deletes a specific food entry using its row ID.",
       "name": "Remove food entry",
       "fields": {
-        "recipe_id": {
-          "name": "Recipe ID",
-          "description": "Recipe ID"
-        },
-        "minutes": {
-          "name": "Duration (minutes)",
-          "description": "Duration (minutes)"
-        },
-        "name": {
-          "name": "Name",
-          "description": "Name"
-        },
-        "calories": {
-          "name": "Calories (kcal)",
-          "description": "Calories (kcal)"
-        },
-        "waist": {
-          "name": "Waist (cm)",
-          "description": "Waist (cm)"
-        },
-        "protein_g": {
-          "name": "Protein (g)",
-          "description": "Protein (g)"
-        },
-        "fat_g": {
-          "name": "Fat (g)",
-          "description": "Fat (g)"
-        },
-        "activity_id": {
-          "name": "Activity row/catalog ID",
-          "description": "Activity row/catalog ID"
-        },
-        "to_meal": {
-          "name": "Destination meal",
-          "description": "Destination meal"
-        },
-        "to_date": {
-          "name": "Destination date",
-          "description": "Destination date"
-        },
-        "weight_unit": {
-          "name": "Weight unit",
-          "description": "Weight unit"
-        },
-        "unit": {
-          "name": "Unit",
-          "description": "Unit"
-        },
-        "quantity": {
-          "name": "Quantity",
-          "description": "Quantity"
-        },
-        "energy_kcal": {
-          "name": "Energy (kcal)",
-          "description": "Energy (kcal)"
-        },
-        "note": {
-          "name": "Note",
-          "description": "Note"
-        },
-        "product_id": {
-          "name": "Product ID",
-          "description": "Product ID"
-        },
-        "eaten": {
-          "name": "Mark as eaten",
-          "description": "Mark as eaten"
-        },
-        "arm": {
-          "name": "Arm (cm)",
-          "description": "Arm (cm)"
-        },
         "date": {
           "name": "Source date",
           "description": "Source date"
-        },
-        "from_meal": {
-          "name": "Source meal",
-          "description": "Source meal"
         },
         "config_entry_id": {
           "name": "Integration entry",
@@ -616,45 +236,9 @@
           "name": "Row ID",
           "description": "Row ID"
         },
-        "amount": {
-          "name": "Amount",
-          "description": "Amount"
-        },
         "meal": {
           "name": "Meal",
           "description": "Meal"
-        },
-        "weight": {
-          "name": "Weight",
-          "description": "Weight"
-        },
-        "millilitres": {
-          "name": "Millilitres",
-          "description": "Millilitres"
-        },
-        "chest": {
-          "name": "Chest (cm)",
-          "description": "Chest (cm)"
-        },
-        "hips": {
-          "name": "Hips (cm)",
-          "description": "Hips (cm)"
-        },
-        "fat_percentage": {
-          "name": "Body fat (%)",
-          "description": "Body fat (%)"
-        },
-        "carbs_g": {
-          "name": "Carbohydrates (g)",
-          "description": "Carbohydrates (g)"
-        },
-        "measure_id": {
-          "name": "Measure ID",
-          "description": "Measure ID"
-        },
-        "thigh": {
-          "name": "Thigh (cm)",
-          "description": "Thigh (cm)"
         }
       }
     },
@@ -662,133 +246,25 @@
       "description": "Logs a catalog activity. Energy is sent as provided.",
       "name": "Add activity",
       "fields": {
-        "recipe_id": {
-          "name": "Recipe ID",
-          "description": "Recipe ID"
-        },
         "minutes": {
           "name": "Duration (minutes)",
           "description": "Duration (minutes)"
-        },
-        "name": {
-          "name": "Name",
-          "description": "Name"
-        },
-        "calories": {
-          "name": "Calories (kcal)",
-          "description": "Calories (kcal)"
-        },
-        "waist": {
-          "name": "Waist (cm)",
-          "description": "Waist (cm)"
-        },
-        "protein_g": {
-          "name": "Protein (g)",
-          "description": "Protein (g)"
-        },
-        "fat_g": {
-          "name": "Fat (g)",
-          "description": "Fat (g)"
         },
         "activity_id": {
           "name": "Activity row/catalog ID",
           "description": "Activity row/catalog ID"
         },
-        "to_meal": {
-          "name": "Destination meal",
-          "description": "Destination meal"
-        },
-        "to_date": {
-          "name": "Destination date",
-          "description": "Destination date"
-        },
-        "weight_unit": {
-          "name": "Weight unit",
-          "description": "Weight unit"
-        },
-        "unit": {
-          "name": "Unit",
-          "description": "Unit"
-        },
-        "quantity": {
-          "name": "Quantity",
-          "description": "Quantity"
-        },
         "energy_kcal": {
           "name": "Energy (kcal)",
           "description": "Energy (kcal)"
-        },
-        "note": {
-          "name": "Note",
-          "description": "Note"
-        },
-        "product_id": {
-          "name": "Product ID",
-          "description": "Product ID"
-        },
-        "eaten": {
-          "name": "Mark as eaten",
-          "description": "Mark as eaten"
-        },
-        "arm": {
-          "name": "Arm (cm)",
-          "description": "Arm (cm)"
         },
         "date": {
           "name": "Source date",
           "description": "Source date"
         },
-        "from_meal": {
-          "name": "Source meal",
-          "description": "Source meal"
-        },
         "config_entry_id": {
           "name": "Integration entry",
           "description": "Integration entry"
-        },
-        "item_id": {
-          "name": "Row ID",
-          "description": "Row ID"
-        },
-        "amount": {
-          "name": "Amount",
-          "description": "Amount"
-        },
-        "meal": {
-          "name": "Meal",
-          "description": "Meal"
-        },
-        "weight": {
-          "name": "Weight",
-          "description": "Weight"
-        },
-        "millilitres": {
-          "name": "Millilitres",
-          "description": "Millilitres"
-        },
-        "chest": {
-          "name": "Chest (cm)",
-          "description": "Chest (cm)"
-        },
-        "hips": {
-          "name": "Hips (cm)",
-          "description": "Hips (cm)"
-        },
-        "fat_percentage": {
-          "name": "Body fat (%)",
-          "description": "Body fat (%)"
-        },
-        "carbs_g": {
-          "name": "Carbohydrates (g)",
-          "description": "Carbohydrates (g)"
-        },
-        "measure_id": {
-          "name": "Measure ID",
-          "description": "Measure ID"
-        },
-        "thigh": {
-          "name": "Thigh (cm)",
-          "description": "Thigh (cm)"
         }
       }
     },
@@ -796,14 +272,6 @@
       "description": "Adds a custom food entry to a meal.",
       "name": "Add custom food entry",
       "fields": {
-        "recipe_id": {
-          "name": "Recipe ID",
-          "description": "Recipe ID"
-        },
-        "minutes": {
-          "name": "Duration (minutes)",
-          "description": "Duration (minutes)"
-        },
         "name": {
           "name": "Name",
           "description": "Name"
@@ -811,10 +279,6 @@
         "calories": {
           "name": "Calories (kcal)",
           "description": "Calories (kcal)"
-        },
-        "waist": {
-          "name": "Waist (cm)",
-          "description": "Waist (cm)"
         },
         "protein_g": {
           "name": "Protein (g)",
@@ -824,105 +288,25 @@
           "name": "Fat (g)",
           "description": "Fat (g)"
         },
-        "activity_id": {
-          "name": "Activity row/catalog ID",
-          "description": "Activity row/catalog ID"
-        },
-        "to_meal": {
-          "name": "Destination meal",
-          "description": "Destination meal"
-        },
-        "to_date": {
-          "name": "Destination date",
-          "description": "Destination date"
-        },
-        "weight_unit": {
-          "name": "Weight unit",
-          "description": "Weight unit"
-        },
-        "unit": {
-          "name": "Unit",
-          "description": "Unit"
-        },
-        "quantity": {
-          "name": "Quantity",
-          "description": "Quantity"
-        },
-        "energy_kcal": {
-          "name": "Energy (kcal)",
-          "description": "Energy (kcal)"
-        },
-        "note": {
-          "name": "Note",
-          "description": "Note"
-        },
-        "product_id": {
-          "name": "Product ID",
-          "description": "Product ID"
-        },
         "eaten": {
           "name": "Mark as eaten",
           "description": "Mark as eaten"
-        },
-        "arm": {
-          "name": "Arm (cm)",
-          "description": "Arm (cm)"
         },
         "date": {
           "name": "Source date",
           "description": "Source date"
         },
-        "from_meal": {
-          "name": "Source meal",
-          "description": "Source meal"
-        },
         "config_entry_id": {
           "name": "Integration entry",
           "description": "Integration entry"
-        },
-        "item_id": {
-          "name": "Row ID",
-          "description": "Row ID"
-        },
-        "amount": {
-          "name": "Amount",
-          "description": "Amount"
         },
         "meal": {
           "name": "Meal",
           "description": "Meal"
         },
-        "weight": {
-          "name": "Weight",
-          "description": "Weight"
-        },
-        "millilitres": {
-          "name": "Millilitres",
-          "description": "Millilitres"
-        },
-        "chest": {
-          "name": "Chest (cm)",
-          "description": "Chest (cm)"
-        },
-        "hips": {
-          "name": "Hips (cm)",
-          "description": "Hips (cm)"
-        },
-        "fat_percentage": {
-          "name": "Body fat (%)",
-          "description": "Body fat (%)"
-        },
         "carbs_g": {
           "name": "Carbohydrates (g)",
           "description": "Carbohydrates (g)"
-        },
-        "measure_id": {
-          "name": "Measure ID",
-          "description": "Measure ID"
-        },
-        "thigh": {
-          "name": "Thigh (cm)",
-          "description": "Thigh (cm)"
         }
       }
     },
@@ -930,133 +314,17 @@
       "description": "Replaces or clears the note for the selected day.",
       "name": "Set daily note",
       "fields": {
-        "recipe_id": {
-          "name": "Recipe ID",
-          "description": "Recipe ID"
-        },
-        "minutes": {
-          "name": "Duration (minutes)",
-          "description": "Duration (minutes)"
-        },
-        "name": {
-          "name": "Name",
-          "description": "Name"
-        },
-        "calories": {
-          "name": "Calories (kcal)",
-          "description": "Calories (kcal)"
-        },
-        "waist": {
-          "name": "Waist (cm)",
-          "description": "Waist (cm)"
-        },
-        "protein_g": {
-          "name": "Protein (g)",
-          "description": "Protein (g)"
-        },
-        "fat_g": {
-          "name": "Fat (g)",
-          "description": "Fat (g)"
-        },
-        "activity_id": {
-          "name": "Activity row/catalog ID",
-          "description": "Activity row/catalog ID"
-        },
-        "to_meal": {
-          "name": "Destination meal",
-          "description": "Destination meal"
-        },
-        "to_date": {
-          "name": "Destination date",
-          "description": "Destination date"
-        },
-        "weight_unit": {
-          "name": "Weight unit",
-          "description": "Weight unit"
-        },
-        "unit": {
-          "name": "Unit",
-          "description": "Unit"
-        },
-        "quantity": {
-          "name": "Quantity",
-          "description": "Quantity"
-        },
-        "energy_kcal": {
-          "name": "Energy (kcal)",
-          "description": "Energy (kcal)"
-        },
         "note": {
           "name": "Note",
           "description": "Note"
-        },
-        "product_id": {
-          "name": "Product ID",
-          "description": "Product ID"
-        },
-        "eaten": {
-          "name": "Mark as eaten",
-          "description": "Mark as eaten"
-        },
-        "arm": {
-          "name": "Arm (cm)",
-          "description": "Arm (cm)"
         },
         "date": {
           "name": "Source date",
           "description": "Source date"
         },
-        "from_meal": {
-          "name": "Source meal",
-          "description": "Source meal"
-        },
         "config_entry_id": {
           "name": "Integration entry",
           "description": "Integration entry"
-        },
-        "item_id": {
-          "name": "Row ID",
-          "description": "Row ID"
-        },
-        "amount": {
-          "name": "Amount",
-          "description": "Amount"
-        },
-        "meal": {
-          "name": "Meal",
-          "description": "Meal"
-        },
-        "weight": {
-          "name": "Weight",
-          "description": "Weight"
-        },
-        "millilitres": {
-          "name": "Millilitres",
-          "description": "Millilitres"
-        },
-        "chest": {
-          "name": "Chest (cm)",
-          "description": "Chest (cm)"
-        },
-        "hips": {
-          "name": "Hips (cm)",
-          "description": "Hips (cm)"
-        },
-        "fat_percentage": {
-          "name": "Body fat (%)",
-          "description": "Body fat (%)"
-        },
-        "carbs_g": {
-          "name": "Carbohydrates (g)",
-          "description": "Carbohydrates (g)"
-        },
-        "measure_id": {
-          "name": "Measure ID",
-          "description": "Measure ID"
-        },
-        "thigh": {
-          "name": "Thigh (cm)",
-          "description": "Thigh (cm)"
         }
       }
     },
@@ -1064,133 +332,17 @@
       "description": "Replaces the total water amount recorded for the day.",
       "name": "Set water total",
       "fields": {
-        "recipe_id": {
-          "name": "Recipe ID",
-          "description": "Recipe ID"
-        },
-        "minutes": {
-          "name": "Duration (minutes)",
-          "description": "Duration (minutes)"
-        },
-        "name": {
-          "name": "Name",
-          "description": "Name"
-        },
-        "calories": {
-          "name": "Calories (kcal)",
-          "description": "Calories (kcal)"
-        },
-        "waist": {
-          "name": "Waist (cm)",
-          "description": "Waist (cm)"
-        },
-        "protein_g": {
-          "name": "Protein (g)",
-          "description": "Protein (g)"
-        },
-        "fat_g": {
-          "name": "Fat (g)",
-          "description": "Fat (g)"
-        },
-        "activity_id": {
-          "name": "Activity row/catalog ID",
-          "description": "Activity row/catalog ID"
-        },
-        "to_meal": {
-          "name": "Destination meal",
-          "description": "Destination meal"
-        },
-        "to_date": {
-          "name": "Destination date",
-          "description": "Destination date"
-        },
-        "weight_unit": {
-          "name": "Weight unit",
-          "description": "Weight unit"
-        },
-        "unit": {
-          "name": "Unit",
-          "description": "Unit"
-        },
-        "quantity": {
-          "name": "Quantity",
-          "description": "Quantity"
-        },
-        "energy_kcal": {
-          "name": "Energy (kcal)",
-          "description": "Energy (kcal)"
-        },
-        "note": {
-          "name": "Note",
-          "description": "Note"
-        },
-        "product_id": {
-          "name": "Product ID",
-          "description": "Product ID"
-        },
-        "eaten": {
-          "name": "Mark as eaten",
-          "description": "Mark as eaten"
-        },
-        "arm": {
-          "name": "Arm (cm)",
-          "description": "Arm (cm)"
-        },
         "date": {
           "name": "Source date",
           "description": "Source date"
-        },
-        "from_meal": {
-          "name": "Source meal",
-          "description": "Source meal"
         },
         "config_entry_id": {
           "name": "Integration entry",
           "description": "Integration entry"
         },
-        "item_id": {
-          "name": "Row ID",
-          "description": "Row ID"
-        },
-        "amount": {
-          "name": "Amount",
-          "description": "Amount"
-        },
-        "meal": {
-          "name": "Meal",
-          "description": "Meal"
-        },
-        "weight": {
-          "name": "Weight",
-          "description": "Weight"
-        },
         "millilitres": {
           "name": "Millilitres",
           "description": "Millilitres"
-        },
-        "chest": {
-          "name": "Chest (cm)",
-          "description": "Chest (cm)"
-        },
-        "hips": {
-          "name": "Hips (cm)",
-          "description": "Hips (cm)"
-        },
-        "fat_percentage": {
-          "name": "Body fat (%)",
-          "description": "Body fat (%)"
-        },
-        "carbs_g": {
-          "name": "Carbohydrates (g)",
-          "description": "Carbohydrates (g)"
-        },
-        "measure_id": {
-          "name": "Measure ID",
-          "description": "Measure ID"
-        },
-        "thigh": {
-          "name": "Thigh (cm)",
-          "description": "Thigh (cm)"
         }
       }
     },
@@ -1198,133 +350,17 @@
       "description": "Deletes a logged activity using its activity row ID.",
       "name": "Remove activity",
       "fields": {
-        "recipe_id": {
-          "name": "Recipe ID",
-          "description": "Recipe ID"
-        },
-        "minutes": {
-          "name": "Duration (minutes)",
-          "description": "Duration (minutes)"
-        },
-        "name": {
-          "name": "Name",
-          "description": "Name"
-        },
-        "calories": {
-          "name": "Calories (kcal)",
-          "description": "Calories (kcal)"
-        },
-        "waist": {
-          "name": "Waist (cm)",
-          "description": "Waist (cm)"
-        },
-        "protein_g": {
-          "name": "Protein (g)",
-          "description": "Protein (g)"
-        },
-        "fat_g": {
-          "name": "Fat (g)",
-          "description": "Fat (g)"
-        },
         "activity_id": {
           "name": "Activity row/catalog ID",
           "description": "Activity row/catalog ID"
-        },
-        "to_meal": {
-          "name": "Destination meal",
-          "description": "Destination meal"
-        },
-        "to_date": {
-          "name": "Destination date",
-          "description": "Destination date"
-        },
-        "weight_unit": {
-          "name": "Weight unit",
-          "description": "Weight unit"
-        },
-        "unit": {
-          "name": "Unit",
-          "description": "Unit"
-        },
-        "quantity": {
-          "name": "Quantity",
-          "description": "Quantity"
-        },
-        "energy_kcal": {
-          "name": "Energy (kcal)",
-          "description": "Energy (kcal)"
-        },
-        "note": {
-          "name": "Note",
-          "description": "Note"
-        },
-        "product_id": {
-          "name": "Product ID",
-          "description": "Product ID"
-        },
-        "eaten": {
-          "name": "Mark as eaten",
-          "description": "Mark as eaten"
-        },
-        "arm": {
-          "name": "Arm (cm)",
-          "description": "Arm (cm)"
         },
         "date": {
           "name": "Source date",
           "description": "Source date"
         },
-        "from_meal": {
-          "name": "Source meal",
-          "description": "Source meal"
-        },
         "config_entry_id": {
           "name": "Integration entry",
           "description": "Integration entry"
-        },
-        "item_id": {
-          "name": "Row ID",
-          "description": "Row ID"
-        },
-        "amount": {
-          "name": "Amount",
-          "description": "Amount"
-        },
-        "meal": {
-          "name": "Meal",
-          "description": "Meal"
-        },
-        "weight": {
-          "name": "Weight",
-          "description": "Weight"
-        },
-        "millilitres": {
-          "name": "Millilitres",
-          "description": "Millilitres"
-        },
-        "chest": {
-          "name": "Chest (cm)",
-          "description": "Chest (cm)"
-        },
-        "hips": {
-          "name": "Hips (cm)",
-          "description": "Hips (cm)"
-        },
-        "fat_percentage": {
-          "name": "Body fat (%)",
-          "description": "Body fat (%)"
-        },
-        "carbs_g": {
-          "name": "Carbohydrates (g)",
-          "description": "Carbohydrates (g)"
-        },
-        "measure_id": {
-          "name": "Measure ID",
-          "description": "Measure ID"
-        },
-        "thigh": {
-          "name": "Thigh (cm)",
-          "description": "Thigh (cm)"
         }
       }
     },
@@ -1332,65 +368,9 @@
       "description": "Adds a Fitatu catalog product using its product and measure IDs.",
       "name": "Add catalog product",
       "fields": {
-        "recipe_id": {
-          "name": "Recipe ID",
-          "description": "Recipe ID"
-        },
-        "minutes": {
-          "name": "Duration (minutes)",
-          "description": "Duration (minutes)"
-        },
-        "name": {
-          "name": "Name",
-          "description": "Name"
-        },
-        "calories": {
-          "name": "Calories (kcal)",
-          "description": "Calories (kcal)"
-        },
-        "waist": {
-          "name": "Waist (cm)",
-          "description": "Waist (cm)"
-        },
-        "protein_g": {
-          "name": "Protein (g)",
-          "description": "Protein (g)"
-        },
-        "fat_g": {
-          "name": "Fat (g)",
-          "description": "Fat (g)"
-        },
-        "activity_id": {
-          "name": "Activity row/catalog ID",
-          "description": "Activity row/catalog ID"
-        },
-        "to_meal": {
-          "name": "Destination meal",
-          "description": "Destination meal"
-        },
-        "to_date": {
-          "name": "Destination date",
-          "description": "Destination date"
-        },
-        "weight_unit": {
-          "name": "Weight unit",
-          "description": "Weight unit"
-        },
-        "unit": {
-          "name": "Unit",
-          "description": "Unit"
-        },
         "quantity": {
           "name": "Quantity",
           "description": "Quantity"
-        },
-        "energy_kcal": {
-          "name": "Energy (kcal)",
-          "description": "Energy (kcal)"
-        },
-        "note": {
-          "name": "Note",
-          "description": "Note"
         },
         "product_id": {
           "name": "Product ID",
@@ -1400,65 +380,21 @@
           "name": "Mark as eaten",
           "description": "Mark as eaten"
         },
-        "arm": {
-          "name": "Arm (cm)",
-          "description": "Arm (cm)"
-        },
         "date": {
           "name": "Source date",
           "description": "Source date"
-        },
-        "from_meal": {
-          "name": "Source meal",
-          "description": "Source meal"
         },
         "config_entry_id": {
           "name": "Integration entry",
           "description": "Integration entry"
         },
-        "item_id": {
-          "name": "Row ID",
-          "description": "Row ID"
-        },
-        "amount": {
-          "name": "Amount",
-          "description": "Amount"
-        },
         "meal": {
           "name": "Meal",
           "description": "Meal"
         },
-        "weight": {
-          "name": "Weight",
-          "description": "Weight"
-        },
-        "millilitres": {
-          "name": "Millilitres",
-          "description": "Millilitres"
-        },
-        "chest": {
-          "name": "Chest (cm)",
-          "description": "Chest (cm)"
-        },
-        "hips": {
-          "name": "Hips (cm)",
-          "description": "Hips (cm)"
-        },
-        "fat_percentage": {
-          "name": "Body fat (%)",
-          "description": "Body fat (%)"
-        },
-        "carbs_g": {
-          "name": "Carbohydrates (g)",
-          "description": "Carbohydrates (g)"
-        },
         "measure_id": {
           "name": "Measure ID",
           "description": "Measure ID"
-        },
-        "thigh": {
-          "name": "Thigh (cm)",
-          "description": "Thigh (cm)"
         }
       }
     },
@@ -1466,38 +402,6 @@
       "name": "Copy meal",
       "description": "Copies a meal to another meal or date.",
       "fields": {
-        "recipe_id": {
-          "name": "Recipe ID",
-          "description": "Recipe ID"
-        },
-        "minutes": {
-          "name": "Duration (minutes)",
-          "description": "Duration (minutes)"
-        },
-        "name": {
-          "name": "Name",
-          "description": "Name"
-        },
-        "calories": {
-          "name": "Calories (kcal)",
-          "description": "Calories (kcal)"
-        },
-        "waist": {
-          "name": "Waist (cm)",
-          "description": "Waist (cm)"
-        },
-        "protein_g": {
-          "name": "Protein (g)",
-          "description": "Protein (g)"
-        },
-        "fat_g": {
-          "name": "Fat (g)",
-          "description": "Fat (g)"
-        },
-        "activity_id": {
-          "name": "Activity row/catalog ID",
-          "description": "Activity row/catalog ID"
-        },
         "to_meal": {
           "name": "Destination meal",
           "description": "Destination meal"
@@ -1506,37 +410,9 @@
           "name": "Destination date",
           "description": "Destination date"
         },
-        "weight_unit": {
-          "name": "Weight unit",
-          "description": "Weight unit"
-        },
-        "unit": {
-          "name": "Unit",
-          "description": "Unit"
-        },
-        "quantity": {
-          "name": "Quantity",
-          "description": "Quantity"
-        },
-        "energy_kcal": {
-          "name": "Energy (kcal)",
-          "description": "Energy (kcal)"
-        },
-        "note": {
-          "name": "Note",
-          "description": "Note"
-        },
-        "product_id": {
-          "name": "Product ID",
-          "description": "Product ID"
-        },
         "eaten": {
           "name": "Mark as eaten",
           "description": "Mark as eaten"
-        },
-        "arm": {
-          "name": "Arm (cm)",
-          "description": "Arm (cm)"
         },
         "date": {
           "name": "Source date",
@@ -1549,50 +425,6 @@
         "config_entry_id": {
           "name": "Integration entry",
           "description": "Integration entry"
-        },
-        "item_id": {
-          "name": "Row ID",
-          "description": "Row ID"
-        },
-        "amount": {
-          "name": "Amount",
-          "description": "Amount"
-        },
-        "meal": {
-          "name": "Meal",
-          "description": "Meal"
-        },
-        "weight": {
-          "name": "Weight",
-          "description": "Weight"
-        },
-        "millilitres": {
-          "name": "Millilitres",
-          "description": "Millilitres"
-        },
-        "chest": {
-          "name": "Chest (cm)",
-          "description": "Chest (cm)"
-        },
-        "hips": {
-          "name": "Hips (cm)",
-          "description": "Hips (cm)"
-        },
-        "fat_percentage": {
-          "name": "Body fat (%)",
-          "description": "Body fat (%)"
-        },
-        "carbs_g": {
-          "name": "Carbohydrates (g)",
-          "description": "Carbohydrates (g)"
-        },
-        "measure_id": {
-          "name": "Measure ID",
-          "description": "Measure ID"
-        },
-        "thigh": {
-          "name": "Thigh (cm)",
-          "description": "Thigh (cm)"
         }
       }
     },
@@ -1604,129 +436,25 @@
           "name": "Recipe ID",
           "description": "Recipe ID"
         },
-        "minutes": {
-          "name": "Duration (minutes)",
-          "description": "Duration (minutes)"
-        },
-        "name": {
-          "name": "Name",
-          "description": "Name"
-        },
-        "calories": {
-          "name": "Calories (kcal)",
-          "description": "Calories (kcal)"
-        },
-        "waist": {
-          "name": "Waist (cm)",
-          "description": "Waist (cm)"
-        },
-        "protein_g": {
-          "name": "Protein (g)",
-          "description": "Protein (g)"
-        },
-        "fat_g": {
-          "name": "Fat (g)",
-          "description": "Fat (g)"
-        },
-        "activity_id": {
-          "name": "Activity row/catalog ID",
-          "description": "Activity row/catalog ID"
-        },
-        "to_meal": {
-          "name": "Destination meal",
-          "description": "Destination meal"
-        },
-        "to_date": {
-          "name": "Destination date",
-          "description": "Destination date"
-        },
-        "weight_unit": {
-          "name": "Weight unit",
-          "description": "Weight unit"
-        },
-        "unit": {
-          "name": "Unit",
-          "description": "Unit"
-        },
         "quantity": {
           "name": "Quantity",
           "description": "Quantity"
-        },
-        "energy_kcal": {
-          "name": "Energy (kcal)",
-          "description": "Energy (kcal)"
-        },
-        "note": {
-          "name": "Note",
-          "description": "Note"
-        },
-        "product_id": {
-          "name": "Product ID",
-          "description": "Product ID"
         },
         "eaten": {
           "name": "Mark as eaten",
           "description": "Mark as eaten"
         },
-        "arm": {
-          "name": "Arm (cm)",
-          "description": "Arm (cm)"
-        },
         "date": {
           "name": "Source date",
           "description": "Source date"
-        },
-        "from_meal": {
-          "name": "Source meal",
-          "description": "Source meal"
         },
         "config_entry_id": {
           "name": "Integration entry",
           "description": "Integration entry"
         },
-        "item_id": {
-          "name": "Row ID",
-          "description": "Row ID"
-        },
-        "amount": {
-          "name": "Amount",
-          "description": "Amount"
-        },
         "meal": {
           "name": "Meal",
           "description": "Meal"
-        },
-        "weight": {
-          "name": "Weight",
-          "description": "Weight"
-        },
-        "millilitres": {
-          "name": "Millilitres",
-          "description": "Millilitres"
-        },
-        "chest": {
-          "name": "Chest (cm)",
-          "description": "Chest (cm)"
-        },
-        "hips": {
-          "name": "Hips (cm)",
-          "description": "Hips (cm)"
-        },
-        "fat_percentage": {
-          "name": "Body fat (%)",
-          "description": "Body fat (%)"
-        },
-        "carbs_g": {
-          "name": "Carbohydrates (g)",
-          "description": "Carbohydrates (g)"
-        },
-        "measure_id": {
-          "name": "Measure ID",
-          "description": "Measure ID"
-        },
-        "thigh": {
-          "name": "Thigh (cm)",
-          "description": "Thigh (cm)"
         }
       }
     },
@@ -1734,65 +462,9 @@
       "name": "Add product by unit",
       "description": "Adds a product by an amount such as grams or millilitres.",
       "fields": {
-        "recipe_id": {
-          "name": "Recipe ID",
-          "description": "Recipe ID"
-        },
-        "minutes": {
-          "name": "Duration (minutes)",
-          "description": "Duration (minutes)"
-        },
-        "name": {
-          "name": "Name",
-          "description": "Name"
-        },
-        "calories": {
-          "name": "Calories (kcal)",
-          "description": "Calories (kcal)"
-        },
-        "waist": {
-          "name": "Waist (cm)",
-          "description": "Waist (cm)"
-        },
-        "protein_g": {
-          "name": "Protein (g)",
-          "description": "Protein (g)"
-        },
-        "fat_g": {
-          "name": "Fat (g)",
-          "description": "Fat (g)"
-        },
-        "activity_id": {
-          "name": "Activity row/catalog ID",
-          "description": "Activity row/catalog ID"
-        },
-        "to_meal": {
-          "name": "Destination meal",
-          "description": "Destination meal"
-        },
-        "to_date": {
-          "name": "Destination date",
-          "description": "Destination date"
-        },
-        "weight_unit": {
-          "name": "Weight unit",
-          "description": "Weight unit"
-        },
         "unit": {
           "name": "Unit",
           "description": "Unit"
-        },
-        "quantity": {
-          "name": "Quantity",
-          "description": "Quantity"
-        },
-        "energy_kcal": {
-          "name": "Energy (kcal)",
-          "description": "Energy (kcal)"
-        },
-        "note": {
-          "name": "Note",
-          "description": "Note"
         },
         "product_id": {
           "name": "Product ID",
@@ -1802,25 +474,13 @@
           "name": "Mark as eaten",
           "description": "Mark as eaten"
         },
-        "arm": {
-          "name": "Arm (cm)",
-          "description": "Arm (cm)"
-        },
         "date": {
           "name": "Source date",
           "description": "Source date"
         },
-        "from_meal": {
-          "name": "Source meal",
-          "description": "Source meal"
-        },
         "config_entry_id": {
           "name": "Integration entry",
           "description": "Integration entry"
-        },
-        "item_id": {
-          "name": "Row ID",
-          "description": "Row ID"
         },
         "amount": {
           "name": "Amount",
@@ -1829,38 +489,6 @@
         "meal": {
           "name": "Meal",
           "description": "Meal"
-        },
-        "weight": {
-          "name": "Weight",
-          "description": "Weight"
-        },
-        "millilitres": {
-          "name": "Millilitres",
-          "description": "Millilitres"
-        },
-        "chest": {
-          "name": "Chest (cm)",
-          "description": "Chest (cm)"
-        },
-        "hips": {
-          "name": "Hips (cm)",
-          "description": "Hips (cm)"
-        },
-        "fat_percentage": {
-          "name": "Body fat (%)",
-          "description": "Body fat (%)"
-        },
-        "carbs_g": {
-          "name": "Carbohydrates (g)",
-          "description": "Carbohydrates (g)"
-        },
-        "measure_id": {
-          "name": "Measure ID",
-          "description": "Measure ID"
-        },
-        "thigh": {
-          "name": "Thigh (cm)",
-          "description": "Thigh (cm)"
         }
       }
     },
@@ -1868,14 +496,6 @@
       "name": "Replace entry with custom food",
       "description": "Replaces one row with a custom food entry.",
       "fields": {
-        "recipe_id": {
-          "name": "Recipe ID",
-          "description": "Recipe ID"
-        },
-        "minutes": {
-          "name": "Duration (minutes)",
-          "description": "Duration (minutes)"
-        },
         "name": {
           "name": "Name",
           "description": "Name"
@@ -1883,10 +503,6 @@
         "calories": {
           "name": "Calories (kcal)",
           "description": "Calories (kcal)"
-        },
-        "waist": {
-          "name": "Waist (cm)",
-          "description": "Waist (cm)"
         },
         "protein_g": {
           "name": "Protein (g)",
@@ -1896,57 +512,9 @@
           "name": "Fat (g)",
           "description": "Fat (g)"
         },
-        "activity_id": {
-          "name": "Activity row/catalog ID",
-          "description": "Activity row/catalog ID"
-        },
-        "to_meal": {
-          "name": "Destination meal",
-          "description": "Destination meal"
-        },
-        "to_date": {
-          "name": "Destination date",
-          "description": "Destination date"
-        },
-        "weight_unit": {
-          "name": "Weight unit",
-          "description": "Weight unit"
-        },
-        "unit": {
-          "name": "Unit",
-          "description": "Unit"
-        },
-        "quantity": {
-          "name": "Quantity",
-          "description": "Quantity"
-        },
-        "energy_kcal": {
-          "name": "Energy (kcal)",
-          "description": "Energy (kcal)"
-        },
-        "note": {
-          "name": "Note",
-          "description": "Note"
-        },
-        "product_id": {
-          "name": "Product ID",
-          "description": "Product ID"
-        },
-        "eaten": {
-          "name": "Mark as eaten",
-          "description": "Mark as eaten"
-        },
-        "arm": {
-          "name": "Arm (cm)",
-          "description": "Arm (cm)"
-        },
         "date": {
           "name": "Source date",
           "description": "Source date"
-        },
-        "from_meal": {
-          "name": "Source meal",
-          "description": "Source meal"
         },
         "config_entry_id": {
           "name": "Integration entry",
@@ -1956,45 +524,13 @@
           "name": "Row ID",
           "description": "Row ID"
         },
-        "amount": {
-          "name": "Amount",
-          "description": "Amount"
-        },
         "meal": {
           "name": "Meal",
           "description": "Meal"
         },
-        "weight": {
-          "name": "Weight",
-          "description": "Weight"
-        },
-        "millilitres": {
-          "name": "Millilitres",
-          "description": "Millilitres"
-        },
-        "chest": {
-          "name": "Chest (cm)",
-          "description": "Chest (cm)"
-        },
-        "hips": {
-          "name": "Hips (cm)",
-          "description": "Hips (cm)"
-        },
-        "fat_percentage": {
-          "name": "Body fat (%)",
-          "description": "Body fat (%)"
-        },
         "carbs_g": {
           "name": "Carbohydrates (g)",
           "description": "Carbohydrates (g)"
-        },
-        "measure_id": {
-          "name": "Measure ID",
-          "description": "Measure ID"
-        },
-        "thigh": {
-          "name": "Thigh (cm)",
-          "description": "Thigh (cm)"
         }
       }
     },
@@ -2002,38 +538,6 @@
       "name": "Move food entry",
       "description": "Moves one food row to another meal or date.",
       "fields": {
-        "recipe_id": {
-          "name": "Recipe ID",
-          "description": "Recipe ID"
-        },
-        "minutes": {
-          "name": "Duration (minutes)",
-          "description": "Duration (minutes)"
-        },
-        "name": {
-          "name": "Name",
-          "description": "Name"
-        },
-        "calories": {
-          "name": "Calories (kcal)",
-          "description": "Calories (kcal)"
-        },
-        "waist": {
-          "name": "Waist (cm)",
-          "description": "Waist (cm)"
-        },
-        "protein_g": {
-          "name": "Protein (g)",
-          "description": "Protein (g)"
-        },
-        "fat_g": {
-          "name": "Fat (g)",
-          "description": "Fat (g)"
-        },
-        "activity_id": {
-          "name": "Activity row/catalog ID",
-          "description": "Activity row/catalog ID"
-        },
         "to_meal": {
           "name": "Destination meal",
           "description": "Destination meal"
@@ -2041,38 +545,6 @@
         "to_date": {
           "name": "Destination date",
           "description": "Destination date"
-        },
-        "weight_unit": {
-          "name": "Weight unit",
-          "description": "Weight unit"
-        },
-        "unit": {
-          "name": "Unit",
-          "description": "Unit"
-        },
-        "quantity": {
-          "name": "Quantity",
-          "description": "Quantity"
-        },
-        "energy_kcal": {
-          "name": "Energy (kcal)",
-          "description": "Energy (kcal)"
-        },
-        "note": {
-          "name": "Note",
-          "description": "Note"
-        },
-        "product_id": {
-          "name": "Product ID",
-          "description": "Product ID"
-        },
-        "eaten": {
-          "name": "Mark as eaten",
-          "description": "Mark as eaten"
-        },
-        "arm": {
-          "name": "Arm (cm)",
-          "description": "Arm (cm)"
         },
         "date": {
           "name": "Source date",
@@ -2089,46 +561,6 @@
         "item_id": {
           "name": "Row ID",
           "description": "Row ID"
-        },
-        "amount": {
-          "name": "Amount",
-          "description": "Amount"
-        },
-        "meal": {
-          "name": "Meal",
-          "description": "Meal"
-        },
-        "weight": {
-          "name": "Weight",
-          "description": "Weight"
-        },
-        "millilitres": {
-          "name": "Millilitres",
-          "description": "Millilitres"
-        },
-        "chest": {
-          "name": "Chest (cm)",
-          "description": "Chest (cm)"
-        },
-        "hips": {
-          "name": "Hips (cm)",
-          "description": "Hips (cm)"
-        },
-        "fat_percentage": {
-          "name": "Body fat (%)",
-          "description": "Body fat (%)"
-        },
-        "carbs_g": {
-          "name": "Carbohydrates (g)",
-          "description": "Carbohydrates (g)"
-        },
-        "measure_id": {
-          "name": "Measure ID",
-          "description": "Measure ID"
-        },
-        "thigh": {
-          "name": "Thigh (cm)",
-          "description": "Thigh (cm)"
         }
       }
     },
@@ -2136,133 +568,13 @@
       "name": "Set water glass size",
       "description": "Sets the volume represented by one glass in Fitatu.",
       "fields": {
-        "recipe_id": {
-          "name": "Recipe ID",
-          "description": "Recipe ID"
-        },
-        "minutes": {
-          "name": "Duration (minutes)",
-          "description": "Duration (minutes)"
-        },
-        "name": {
-          "name": "Name",
-          "description": "Name"
-        },
-        "calories": {
-          "name": "Calories (kcal)",
-          "description": "Calories (kcal)"
-        },
-        "waist": {
-          "name": "Waist (cm)",
-          "description": "Waist (cm)"
-        },
-        "protein_g": {
-          "name": "Protein (g)",
-          "description": "Protein (g)"
-        },
-        "fat_g": {
-          "name": "Fat (g)",
-          "description": "Fat (g)"
-        },
-        "activity_id": {
-          "name": "Activity row/catalog ID",
-          "description": "Activity row/catalog ID"
-        },
-        "to_meal": {
-          "name": "Destination meal",
-          "description": "Destination meal"
-        },
-        "to_date": {
-          "name": "Destination date",
-          "description": "Destination date"
-        },
-        "weight_unit": {
-          "name": "Weight unit",
-          "description": "Weight unit"
-        },
-        "unit": {
-          "name": "Unit",
-          "description": "Unit"
-        },
-        "quantity": {
-          "name": "Quantity",
-          "description": "Quantity"
-        },
-        "energy_kcal": {
-          "name": "Energy (kcal)",
-          "description": "Energy (kcal)"
-        },
-        "note": {
-          "name": "Note",
-          "description": "Note"
-        },
-        "product_id": {
-          "name": "Product ID",
-          "description": "Product ID"
-        },
-        "eaten": {
-          "name": "Mark as eaten",
-          "description": "Mark as eaten"
-        },
-        "arm": {
-          "name": "Arm (cm)",
-          "description": "Arm (cm)"
-        },
-        "date": {
-          "name": "Source date",
-          "description": "Source date"
-        },
-        "from_meal": {
-          "name": "Source meal",
-          "description": "Source meal"
-        },
         "config_entry_id": {
           "name": "Integration entry",
           "description": "Integration entry"
         },
-        "item_id": {
-          "name": "Row ID",
-          "description": "Row ID"
-        },
-        "amount": {
-          "name": "Amount",
-          "description": "Amount"
-        },
-        "meal": {
-          "name": "Meal",
-          "description": "Meal"
-        },
-        "weight": {
-          "name": "Weight",
-          "description": "Weight"
-        },
         "millilitres": {
           "name": "Millilitres",
           "description": "Millilitres"
-        },
-        "chest": {
-          "name": "Chest (cm)",
-          "description": "Chest (cm)"
-        },
-        "hips": {
-          "name": "Hips (cm)",
-          "description": "Hips (cm)"
-        },
-        "fat_percentage": {
-          "name": "Body fat (%)",
-          "description": "Body fat (%)"
-        },
-        "carbs_g": {
-          "name": "Carbohydrates (g)",
-          "description": "Carbohydrates (g)"
-        },
-        "measure_id": {
-          "name": "Measure ID",
-          "description": "Measure ID"
-        },
-        "thigh": {
-          "name": "Thigh (cm)",
-          "description": "Thigh (cm)"
         }
       }
     }

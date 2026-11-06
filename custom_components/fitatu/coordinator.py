@@ -235,7 +235,7 @@ class FitatuCoordinator(DataUpdateCoordinator[dict[str, Any]]):
         """Close the pooled HTTP connection."""
         self.client.close()
 
-    def _account_date(self) -> date:
+    def account_date(self) -> date:
         """Return today's date in Fitatu's account timezone."""
         from homeassistant.util import dt as dt_util
 
@@ -249,7 +249,7 @@ class FitatuCoordinator(DataUpdateCoordinator[dict[str, Any]]):
 
     def _fetch(self) -> tuple[dict[str, Any], dict[str, Any]]:
         """Perform the synchronous API calls in a worker thread."""
-        today = self._account_date()
+        today = self.account_date()
         user_id = self.entry.data[CONF_USER_ID]
         categories = set(
             self.entry.options.get("categories", DEFAULT_MONITORING_CATEGORIES)

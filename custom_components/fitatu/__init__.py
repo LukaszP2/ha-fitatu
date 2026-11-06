@@ -34,5 +34,5 @@ async def async_unload_entry(hass: HomeAssistant, entry: FitatuConfigEntry) -> b
     """Unload a Fitatu config entry."""
     if not await hass.config_entries.async_unload_platforms(entry, PLATFORMS):
         return False
-    entry.runtime_data.close()
+    await hass.async_add_executor_job(entry.runtime_data.close)
     return True
