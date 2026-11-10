@@ -9,10 +9,29 @@ from typing import Any
 import voluptuous as vol
 from homeassistant.core import HomeAssistant, ServiceCall
 from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.service import (
-    async_get_config_entry,
-    async_register_admin_service,
-)
+from homeassistant.helpers.service import async_register_admin_service
+
+try:
+    from homeassistant.helpers.service import async_get_config_entry
+except ImportError:  # Compatibility with older Home Assistant versions
+    from homeassistant.config_entries import ConfigEntryState
+
+    def async_get_config_entry(hass: HomeAssistant, domain: str, entry_id: str | None) -> Any:
+        if entry_id is None:
+            entries = [
+                e
+                for e in hass.config_entries.async_entries(domain)
+                if getattr(e, "state", None) is ConfigEntryState.LOADED
+            ]
+            return entries[0] if len(entries) == 1 else None
+        entry = hass.config_entries.async_get_entry(entry_id)
+        if (
+            entry
+            and entry.domain == domain
+            and getattr(entry, "state", None) is ConfigEntryState.LOADED
+        ):
+            return entry
+        return None
 
 from .const import CONF_USER_ID, DOMAIN
 
