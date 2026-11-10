@@ -121,3 +121,48 @@ class TestFitatuCoordinator(unittest.IsolatedAsyncioTestCase):
                 entry,
                 data={CONF_USER_ID: "123", CONF_SESSION: new_session},
             )
+
+    def test_fetch_weight_and_settings_integration(self):
+        """Test _fetch execution correctly parses weight and preserves/normalizes unit."""
+        hass = MagicMock()
+        hass.config.time_zone = "UTC"
+        entry = MagicMock()
+        entry.data = {CONF_USER_ID: "123", CONF_SESSION: {}}
+        entry.options = {"categories": ["nutrition", "hydration", "body", "activity", "advanced"]}
+
+        with patch("custom_components.fitatu.coordinator.FitatuAuthContext"), patch(
+            "custom_components.fitatu.coordinator.FitatuApiClient"
+        ):
+            coord = FitatuCoordinator(hass, entry)
+            coord.client = MagicMock()
+            coord.auth.app_timezone = "UTC"
+            coord.auth.to_session_data.return_value = {"session": "ok"}
+
+            # Scenario 1: weight from history, settings is None (should NOT wipe weight_unit!)
+            coord.client.summary.get_nutrition.return_value = {"energy": {"eaten": 1800}}
+            coord.client.planner.get_day.return_value = {"waterConsumptionMl": 1200}
+            coord.client.summary.get_activities.return_value = []
+            coord.client.user_settings.get_new.return_value = None
+            coord.client.measurements.get_weight_history.return_value = {
+                "list": [{"value": "80.5", "unit": "kg", "date": "2026-11-06"}]
+            }
+
+            values, _session = coord._fetch()
+            self.assertEqual(values["weight"], 80.5)
+            self.assertEqual(values["weight_unit"], "KG")
+            self.assertEqual(values["weight_date"], "2026-11-06")
+            self.assertEqual(values["water"], 1200.0)
+            self.assertIsNone(values["water_target"])
+
+            # Scenario 2: settings provides lowercase weight_unit and targets
+            coord.client.user_settings.get_new.return_value = {
+                "weight_unit": "lb",
+                "waterTarget": 2500,
+                "bmr": 1750,
+                "tmr": 2300,
+            }
+            values, _session = coord._fetch()
+            self.assertEqual(values["weight_unit"], "LB")
+            self.assertEqual(values["water_target"], 2500.0)
+            self.assertEqual(values["bmr"], 1750.0)
+            self.assertEqual(values["tmr"], 2300.0)

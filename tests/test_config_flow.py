@@ -190,3 +190,61 @@ class TestFitatuConfigFlow(unittest.IsolatedAsyncioTestCase):
             sorted(result["data"]["categories"]),
             sorted([CATEGORY_CORE, CATEGORY_ACTIVITY]),
         )
+
+    async def test_reconfigure_flow_success(self):
+        """Test reconfigure flow succeeds and updates entry."""
+        flow = FitatuConfigFlow()
+        flow.hass = MagicMock()
+        flow.context = {"entry_id": "entry1"}
+
+        entry = MagicMock()
+        entry.entry_id = "entry1"
+        entry.data = {
+            CONF_USER_ID: "12345",
+            "email": "user@example.com",
+            CONF_SESSION: {},
+        }
+        flow._get_reconfigure_entry = MagicMock(return_value=entry)
+        flow.async_update_reload_and_abort = MagicMock(
+            return_value={"type": FlowResultType.ABORT, "reason": "reconfigure_successful"}
+        )
+
+        fake_session = {"token": "reconfigured"}
+        with patch(
+            "custom_components.fitatu.config_flow._login",
+            return_value=("12345", fake_session),
+        ):
+            result = await flow.async_step_reconfigure(
+                {"email": "user@example.com", "password": "new_password"}
+            )
+
+        self.assertEqual(result["type"], FlowResultType.ABORT)
+        self.assertEqual(result["reason"], "reconfigure_successful")
+        flow.async_update_reload_and_abort.assert_called_once()
+
+    async def test_reconfigure_flow_different_account(self):
+        """Test reconfigure flow rejects a different user id."""
+        flow = FitatuConfigFlow()
+        flow.hass = MagicMock()
+        flow.context = {"entry_id": "entry1"}
+
+        entry = MagicMock()
+        entry.entry_id = "entry1"
+        entry.data = {
+            CONF_USER_ID: "12345",
+            "email": "user@example.com",
+            CONF_SESSION: {},
+        }
+        flow._get_reconfigure_entry = MagicMock(return_value=entry)
+
+        with patch(
+            "custom_components.fitatu.config_flow._login",
+            return_value=("99999", {"token": "other"}),
+        ):
+            result = await flow.async_step_reconfigure(
+                {"email": "other@example.com", "password": "password"}
+            )
+
+        self.assertEqual(result["type"], FlowResultType.FORM)
+        self.assertEqual(result["step_id"], "reconfigure")
+        self.assertEqual(result["errors"], {"base": "different_account"})

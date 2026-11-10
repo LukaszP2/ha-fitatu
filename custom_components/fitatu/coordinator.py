@@ -341,9 +341,9 @@ class FitatuCoordinator(DataUpdateCoordinator[dict[str, Any]]):
                     },
                 )
             )
-            values["weight_unit"] = _find_mapping_value(
-                settings, {"weightunit", "weight_unit"}
-            )
+            settings_unit = _find_mapping_value(settings, {"weightunit", "weight_unit"})
+            if settings_unit is not None and str(settings_unit).strip():
+                values["weight_unit"] = str(settings_unit).strip().upper()
             values["bmr"] = _number(
                 _find_mapping_value(settings, {"bmr", "basalmetabolicrate"})
             )
@@ -354,7 +354,6 @@ class FitatuCoordinator(DataUpdateCoordinator[dict[str, Any]]):
             )
         else:
             values["water_target"] = None
-            values["weight_unit"] = None
             values["bmr"] = None
             values["tmr"] = None
 

@@ -70,3 +70,26 @@ class TestFitatuSensors(unittest.TestCase):
         coordinator.data = {"weight": 82.5, "weight_unit": "UNKNOWN", "weight_date": "2026-11-05"}
         self.assertIsNone(sensor.native_unit_of_measurement)
         self.assertIsNone(sensor.native_value)
+
+    def test_sensors_none_data_safety(self):
+        """Test sensors safely return None/empty when coordinator.data is None."""
+        entry = MagicMock()
+        entry.data = {CONF_USER_ID: "999"}
+        coordinator = MagicMock()
+        coordinator.data = None
+
+        desc = next(s for s in SENSORS if s.key == "calories_eaten")
+        value_sensor = FitatuValueSensor(entry, coordinator, desc)
+        self.assertIsNone(value_sensor.native_value)
+        self.assertEqual(value_sensor.extra_state_attributes, {})
+
+        weight_sensor = FitatuWeightSensor(entry, coordinator)
+        self.assertIsNone(weight_sensor.native_unit_of_measurement)
+        self.assertIsNone(weight_sensor.native_value)
+        self.assertEqual(weight_sensor.extra_state_attributes, {})
+
+    def test_water_sensor_config(self):
+        """Test water sensor has None device_class and MEASUREMENT state_class for LTS."""
+        water_desc = next(s for s in SENSORS if s.key == "water")
+        self.assertIsNone(water_desc.device_class)
+        self.assertEqual(water_desc.state_class, SensorStateClass.MEASUREMENT)

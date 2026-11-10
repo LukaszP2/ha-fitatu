@@ -9,6 +9,10 @@
   "integration_type": "service",
   "issue_tracker": "https://github.com/LukaszP2/ha-fitatu/issues",
   "iot_class": "cloud_polling",
+  "loggers": [
+    "fitatu_api",
+    "custom_components.fitatu"
+  ],
   "requirements": [
     "fitatu-api==0.6.0"
   ],

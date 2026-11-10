@@ -16,6 +16,14 @@
           "email": "Adres e-mail",
           "password": "Hasło"
         }
+      },
+      "reconfigure": {
+        "title": "Konfiguruj ponownie Fitatu",
+        "description": "Zaktualizuj adres e-mail i hasło Fitatu.",
+        "data": {
+          "email": "Adres e-mail",
+          "password": "Hasło"
+        }
       }
     },
     "error": {
@@ -26,7 +34,8 @@
     },
     "abort": {
       "already_configured": "To konto Fitatu jest już skonfigurowane.",
-      "reauth_successful": "Ponownie zalogowano do Fitatu."
+      "reauth_successful": "Ponownie zalogowano do Fitatu.",
+      "reconfigure_successful": "Zaktualizowano dane konta Fitatu."
     }
   },
   "options": {

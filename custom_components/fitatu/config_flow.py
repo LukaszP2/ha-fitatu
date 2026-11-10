@@ -35,7 +35,7 @@ async def _login(
     return await hass.async_add_executor_job(login)
 
 
-class FitatuConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
+class FitatuConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):  # type: ignore[call-arg]
     """Handle user setup and reauthentication for Fitatu."""
 
     VERSION = 1
@@ -118,6 +118,50 @@ class FitatuConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
 
         return self.async_show_form(
             step_id="reauth_confirm",
+            data_schema=vol.Schema(
+                {
+                    vol.Required(
+                        CONF_EMAIL, default=entry.data.get(CONF_EMAIL, "")
+                    ): str,
+                    vol.Required(CONF_PASSWORD): str,
+                }
+            ),
+            errors=errors,
+        )
+
+    async def async_step_reconfigure(
+        self, user_input: dict[str, Any] | None = None
+    ) -> ConfigFlowResult:
+        """Handle reconfiguration of credentials."""
+        entry = self._get_reconfigure_entry()
+        errors: dict[str, str] = {}
+        if user_input is not None:
+            try:
+                user_id, session = await _login(
+                    self.hass, user_input[CONF_EMAIL], user_input[CONF_PASSWORD]
+                )
+            except FitatuAuthError:
+                errors["base"] = "invalid_auth"
+            except (FitatuApiError, OSError, TimeoutError):
+                errors["base"] = "cannot_connect"
+            except Exception:
+                _LOGGER.exception("Unexpected error during reconfiguration")
+                errors["base"] = "unknown"
+            else:
+                if user_id != entry.data[CONF_USER_ID]:
+                    errors["base"] = "different_account"
+                else:
+                    return self.async_update_reload_and_abort(
+                        entry,
+                        data={
+                            **entry.data,
+                            CONF_EMAIL: user_input[CONF_EMAIL],
+                            CONF_SESSION: session,
+                        },
+                    )
+
+        return self.async_show_form(
+            step_id="reconfigure",
             data_schema=vol.Schema(
                 {
                     vol.Required(

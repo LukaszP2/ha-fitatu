@@ -167,7 +167,7 @@ SENSORS: tuple[FitatuSensorDescription, ...] = (
         data_key="water",
         category=CATEGORY_HYDRATION,
         native_unit_of_measurement=UnitOfVolume.MILLILITERS,
-        device_class=SensorDeviceClass.VOLUME,
+        device_class=None,
         state_class=SensorStateClass.MEASUREMENT,
     ),
     FitatuSensorDescription(
@@ -227,9 +227,32 @@ async def async_setup_entry(
     async_add_entities: AddEntitiesCallback,
 ) -> None:
     """Add the selected monitoring sensors."""
+    from homeassistant.helpers import entity_registry as er
+
+    ent_reg = er.async_get(hass)
+    registered_entries = er.async_entries_for_config_entry(ent_reg, entry.entry_id)
+
     enabled_categories = set(
         entry.options.get("categories", DEFAULT_MONITORING_CATEGORIES)
     )
+
+    category_by_key: dict[str, str] = {desc.key: desc.category for desc in SENSORS}
+    category_by_key["weight"] = CATEGORY_BODY
+
+    user_id = str(entry.data.get(CONF_USER_ID, ""))
+    prefix = f"{user_id}_" if user_id else ""
+
+    for reg_entry in registered_entries:
+        unique_id = getattr(reg_entry, "unique_id", "")
+        sensor_key = unique_id.removeprefix(prefix) if prefix else unique_id
+        category = category_by_key.get(sensor_key)
+        translation_key = getattr(reg_entry, "translation_key", None)
+        if category is None and translation_key:
+            category = category_by_key.get(translation_key)
+
+        if category and category not in enabled_categories:
+            ent_reg.async_remove(reg_entry.entity_id)
+
     entities: list[SensorEntity] = [
         FitatuValueSensor(entry, entry.runtime_data, description)
         for description in SENSORS
@@ -259,11 +282,15 @@ class FitatuValueSensor(CoordinatorEntity[FitatuCoordinator], SensorEntity):
     @property
     def native_value(self) -> float | int | None:
         """Return the latest normalized value."""
+        if not self.coordinator.data:
+            return None
         return self.coordinator.data.get(self.entity_description.data_key)
 
     @property
     def extra_state_attributes(self) -> dict[str, Any]:
         """Identify the local date for daily values."""
+        if not self.coordinator.data:
+            return {}
         return {"date": self.coordinator.data.get("date")}
 
 
@@ -285,6 +312,8 @@ class FitatuWeightSensor(CoordinatorEntity[FitatuCoordinator], SensorEntity):
     @property
     def native_unit_of_measurement(self) -> str | None:
         """Return a recognized unit from the service response."""
+        if not self.coordinator.data:
+            return None
         unit = self.coordinator.data.get("weight_unit")
         if unit in {"KG", "KILOGRAM", "KILOGRAMS"}:
             return UnitOfMass.KILOGRAMS
@@ -295,13 +324,15 @@ class FitatuWeightSensor(CoordinatorEntity[FitatuCoordinator], SensorEntity):
     @property
     def native_value(self) -> float | None:
         """Return the latest mass only when its unit is known."""
-        if self.native_unit_of_measurement is None:
+        if not self.coordinator.data or self.native_unit_of_measurement is None:
             return None
         return self.coordinator.data.get("weight")
 
     @property
     def extra_state_attributes(self) -> dict[str, Any]:
         """Return the date of the last measurement."""
+        if not self.coordinator.data:
+            return {}
         return {"date": self.coordinator.data.get("weight_date")}
 
 
